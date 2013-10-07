@@ -3,13 +3,13 @@
 Crafty.c('Button', {
 	Button: function(text) {
 		this.text = text;
-
-		this.initialize();
 		
 		return this;
 	},
 	
-	initialize: function () {
+	init: function () {
+		this.requires('Mouse');
+
 		this.buttonWidth = 250;
 		this.buttonHeight = 70;
 
