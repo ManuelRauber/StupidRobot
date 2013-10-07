@@ -2,7 +2,7 @@
 	Crafty.background('black');
 
 	Crafty.e('2D,Canvas,Text')
-		.text('Loading. Please be patient!')
+		.text('Initialize Loading')
 		.attr({
 			w: Game.width(),
 			x: 0,
@@ -16,7 +16,22 @@
 		'/assets/Game/Images/robot-west.scale-100.png',
 		'/assets/Game/Images/rocket.scale-100.png',
 		'/assets/Game/Images/tree.scale-100.png'
-	], function() {
-		Crafty.scene('MainMenu');
+	],
+
+    //on load finish
+    function () {      
+        Crafty.scene('MainMenu');
+    },
+
+    //on progress
+    function (e) {
+        Crafty.e('2D,Canvas,ProgressBar')
+            .ProgressBar()
+            .update(e.percent-100);
+    },
+
+    //on error
+    function (e) {
+        
 	});
 });
