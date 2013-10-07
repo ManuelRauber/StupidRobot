@@ -1,12 +1,12 @@
 ﻿/// <reference path="/libs/crafty.js"/>
 
 Crafty.c('Button', {
-	Button: function(text) {
+	Button: function (text) {
 		this.text = text;
-		
+
 		return this;
 	},
-	
+
 	init: function () {
 		this.requires('Mouse');
 
@@ -14,7 +14,7 @@ Crafty.c('Button', {
 		this.buttonHeight = 70;
 
 		var ctx = Crafty.canvas.context;
-		
+
 		var gradient = ctx.createLinearGradient(0, 0, 0, this.buttonHeight);
 		gradient.addColorStop(0, '#b0b43b');
 		gradient.addColorStop(1, '#D6DB48');
@@ -25,8 +25,8 @@ Crafty.c('Button', {
 		gradient.addColorStop(1, '#939633');
 		this.hoverGradient = gradient;
 	},
-	
-	draw: function() {
+
+	draw: function () {
 		var ctx = Crafty.canvas.context;
 		ctx.save();
 
