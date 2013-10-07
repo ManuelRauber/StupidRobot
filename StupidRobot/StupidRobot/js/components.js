@@ -3,22 +3,34 @@
 Crafty.c('Button', {
 	Button: function(text) {
 		this.text = text;
+
+		this.initialize();
 		
 		return this;
+	},
+	
+	initialize: function() {
+		var ctx = Crafty.canvas.context;
+		
+		var gradient = ctx.createLinearGradient(0, 0, 0, 70);
+		gradient.addColorStop(0, '#b0b43b');
+		gradient.addColorStop(1, '#D6DB48');
+
+		this.normalGradient = gradient;
+
+		this.buttonWidth = 250;
+		this.buttonHeight = 70;
 	},
 	
 	draw: function() {
 		var ctx = Crafty.canvas.context;
 		ctx.save();
 
-		var gradient = ctx.createLinearGradient(0, 0, 0, 70);
-		gradient.addColorStop(0, '#b0b43b');
-		gradient.addColorStop(1, '#D6DB48');
-		ctx.fillStyle = gradient;
-		ctx.fillRect(this.x, this.y, 250, 70);
+		ctx.fillStyle = this.normalGradient;
+		ctx.fillRect(this.x, this.y, this.buttonWidth, this.buttonHeight);
 
 		ctx.lineWidth = 1;
-		ctx.strokeRect(this.x, this.y, 250, 70);
+		ctx.strokeRect(this.x, this.y, this.buttonWidth, this.buttonHeight);
 
 		ctx.fillStyle = 'white';
 		ctx.font = "35px Arial";
@@ -26,7 +38,7 @@ Crafty.c('Button', {
 
 		var measure = ctx.measureText(this.text);
 
-		ctx.fillText(this.text, this.x + (250 / 2), this.y + 70 / 2 + 13);
+		ctx.fillText(this.text, this.x + (this.buttonWidth / 2), this.y + this.buttonHeight / 2 + 13);
 
 		ctx.restore();
 	}
