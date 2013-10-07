@@ -10,17 +10,17 @@ Crafty.c('Button', {
 	init: function () {
 		this.requires('Mouse');
 
-		this.buttonWidth = 250;
-		this.buttonHeight = 70;
+		this.w = 250;
+		this.h = 70;
 
 		var ctx = Crafty.canvas.context;
 
-		var gradient = ctx.createLinearGradient(0, 0, 0, this.buttonHeight);
+		var gradient = ctx.createLinearGradient(0, 0, 0, this.h);
 		gradient.addColorStop(0, '#b0b43b');
 		gradient.addColorStop(1, '#D6DB48');
 		this.normalGradient = gradient;
 
-		gradient = ctx.createLinearGradient(0, 0, 0, this.buttonHeight);
+		gradient = ctx.createLinearGradient(0, 0, 0, this.h);
 		gradient.addColorStop(0, '#656722');
 		gradient.addColorStop(1, '#939633');
 		this.hoverGradient = gradient;
@@ -31,15 +31,15 @@ Crafty.c('Button', {
 		ctx.save();
 
 		ctx.fillStyle = this.normalGradient;
-		ctx.fillRect(this.x, this.y, this.buttonWidth, this.buttonHeight);
+		ctx.fillRect(this.x, this.y, this.w, this.h);
 
 		ctx.lineWidth = 1;
-		ctx.strokeRect(this.x, this.y, this.buttonWidth, this.buttonHeight);
+		ctx.strokeRect(this.x, this.y, this.w, this.h);
 
 		ctx.fillStyle = 'white';
 		ctx.font = "35px Arial";
 		ctx.textAlign = 'center';
-		ctx.fillText(this.text, this.x + (this.buttonWidth / 2), this.y + this.buttonHeight / 2 + 13);
+		ctx.fillText(this.text, this.x + (this.w / 2), this.y + this.h / 2 + 13);
 
 		ctx.restore();
 	}
