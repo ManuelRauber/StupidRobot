@@ -92,7 +92,8 @@
     <Content Include="js\components.js" />
     <Content Include="js\default.js" />
     <Content Include="js\game.js" />
-    <Content Include="js\scenes.js" />
+    <Content Include="js\scenes\AppStart.js" />
+    <Content Include="js\scenes\MainMenu.js" />
     <Content Include="libs\crafty.js" />
     <Content Include="pages\game.css" />
     <Content Include="pages\game.html" />
