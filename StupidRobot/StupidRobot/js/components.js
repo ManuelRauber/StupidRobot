@@ -9,21 +9,21 @@ Crafty.c('Button', {
 		return this;
 	},
 	
-	initialize: function() {
+	initialize: function () {
+		this.buttonWidth = 250;
+		this.buttonHeight = 70;
+
 		var ctx = Crafty.canvas.context;
 		
-		var gradient = ctx.createLinearGradient(0, 0, 0, 70);
+		var gradient = ctx.createLinearGradient(0, 0, 0, this.buttonHeight);
 		gradient.addColorStop(0, '#b0b43b');
 		gradient.addColorStop(1, '#D6DB48');
 		this.normalGradient = gradient;
 
-		gradient = ctx.createLinearGradient(0, 0, 0, 70);
+		gradient = ctx.createLinearGradient(0, 0, 0, this.buttonHeight);
 		gradient.addColorStop(0, '#656722');
 		gradient.addColorStop(1, '#939633');
 		this.hoverGradient = gradient;
-
-		this.buttonWidth = 250;
-		this.buttonHeight = 70;
 	},
 	
 	draw: function() {
