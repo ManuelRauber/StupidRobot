@@ -1,10 +1,10 @@
 ﻿Game = {	
 	width: function() {
-		return window.innerWidth + 1;
+		return window.innerWidth;
 	},
 	
 	height: function() {
-		return window.innerHeight + 1;
+		return window.innerHeight;
 	},
 	
 	start: function() {
