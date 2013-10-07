@@ -24,13 +24,25 @@ Crafty.c('Button', {
 		gradient.addColorStop(0, '#656722');
 		gradient.addColorStop(1, '#939633');
 		this.hoverGradient = gradient;
+		
+		this.isHovering = false;
+
+		this.bind('MouseOver', function () {
+			this.isHovering = true;
+			this.trigger('Change');
+		});
+
+		this.bind('MouseOut', function() {
+			this.isHovering = false;
+			this.trigger('Change');
+		});
 	},
 
 	draw: function () {
 		var ctx = Crafty.canvas.context;
 		ctx.save();
 
-		ctx.fillStyle = this.normalGradient;
+		ctx.fillStyle = this.isHovering ? this.hoverGradient : this.normalGradient;
 		ctx.fillRect(this.x, this.y, this.w, this.h);
 
 		ctx.lineWidth = 1;
