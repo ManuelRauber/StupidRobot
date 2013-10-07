@@ -14,7 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" StartPage="default.html">
+    <Application Id="App" StartPage="pages/mainmenu/mainmenu.html">
       <VisualElements DisplayName="StupidRobot" Logo="images\Store\logo.png" SmallLogo="images\Store\smalllogo.png" Description="StupidRobot" ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="noLogos" WideLogo="images\Store\widelogo.png" />
         <SplashScreen Image="images\Store\splashscreen.png" BackgroundColor="#B9BD3E" />
