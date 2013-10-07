@@ -35,9 +35,6 @@ Crafty.c('Button', {
 		ctx.fillStyle = 'white';
 		ctx.font = "35px Arial";
 		ctx.textAlign = 'center';
-
-		var measure = ctx.measureText(this.text);
-
 		ctx.fillText(this.text, this.x + (this.buttonWidth / 2), this.y + this.buttonHeight / 2 + 13);
 
 		ctx.restore();
