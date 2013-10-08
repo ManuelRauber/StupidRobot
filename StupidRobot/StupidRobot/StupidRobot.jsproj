@@ -100,6 +100,7 @@
     <None Include="js\game.js" />
     <None Include="js\scenes\AppStart.js" />
     <None Include="js\scenes\MainMenu.js" />
+    <None Include="compressed\readme.txt" />
     <Content Include="libs\crafty.js" />
     <Content Include="packages.config" />
     <Content Include="pages\game.css" />
@@ -122,9 +123,6 @@
     <DestinationScriptFile Include="compressed\code.js">
     </DestinationScriptFile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="compressed\" />
-  </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
        that target and the DisableFastUpToDateCheck PropertyGroup. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -138,5 +136,9 @@
   -->
   <Target Name="BeforeBuild">
     <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
+    <ItemGroup>
+      <Content Include="@(DestinationScriptFile)">
+      </Content>
+    </ItemGroup>
   </Target>
 </Project>
