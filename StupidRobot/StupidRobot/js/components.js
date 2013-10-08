@@ -37,16 +37,17 @@ Crafty.c('ProgressBar', {
         return this;
     },
 
-    update: function (progress) {
-        this.progress = progress;
-    },
-
     init: function () {
         this.w = 500;
         this.h = 50;
         this.x = (Game.width() / 2) - (this.w / 2);
         this.y = (Game.height() / 2) - (this.h / 2);
         this.progress = 0;
+
+        this.bind('update', function (progress) {
+            this.progress = progress;
+            this.draw();
+        });
     },
 
     draw: function () {

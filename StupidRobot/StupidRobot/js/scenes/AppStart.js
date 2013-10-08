@@ -9,6 +9,9 @@
 			y: Game.height() / 2 - 25
 		});
 
+	Crafty.e('2D,Canvas,ProgressBar')
+        .ProgressBar();
+
 	Crafty.load([
 		'/assets/Game/Images/robot-east.scale-100.png',
 		'/assets/Game/Images/robot-north.scale-100.png',
@@ -19,15 +22,13 @@
 	],
 
     //on load finish
-    function () {      
+    function () {
         Crafty.scene('MainMenu');
     },
 
     //on progress
     function (e) {
-        Crafty.e('2D,Canvas,ProgressBar')
-            .ProgressBar()
-            .update(e.percent-100);
+        Crafty.trigger('update', e.percent - 100);
     },
 
     //on error
