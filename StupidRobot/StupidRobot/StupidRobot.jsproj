@@ -124,17 +124,6 @@
     <DestinationScriptFile Include="compressed\code.js">
     </DestinationScriptFile>
   </ItemGroup>
-  <!-- To modify your build process, add your task inside one of the targets below then uncomment
-       that target and the DisableFastUpToDateCheck PropertyGroup. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  <PropertyGroup>
-    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-  </PropertyGroup>
-  -->
   <Target Name="BeforeBuild" >
     <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
     <JSCompress Files="@(DestinationScriptFile)" Condition="'$(Configuration)'=='Release'" />
