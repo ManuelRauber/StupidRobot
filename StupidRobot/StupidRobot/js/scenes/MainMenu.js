@@ -7,6 +7,7 @@
 		.attr({
 		    x: -250,
 		    y: 50,
+            sceneAction: 'Campaign'
 		})
         .bind('startMenuAnimation', function () {
             this.tween({

@@ -34,6 +34,14 @@
 			this.isHovering = false;
 			this.trigger('Change');
 		});
+
+		this.sceneAction = null;
+
+		this.bind('Click', function () {
+		    Crafty.scene(sceneAction);
+		});
+
+
 	},
 
 	draw: function () {
