@@ -36,6 +36,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>cf4853e2-6442-4572-abf3-cdaabce96a39</ProjectGuid>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">
     <VisualStudioVersion>11.0</VisualStudioVersion>
@@ -99,6 +101,7 @@
     <Content Include="js\scenes\AppStart.js" />
     <Content Include="js\scenes\MainMenu.js" />
     <Content Include="libs\crafty.js" />
+    <Content Include="packages.config" />
     <Content Include="pages\game.css" />
     <Content Include="pages\game.html" />
     <None Include="StupidRobot_TemporaryKey.pfx" />
@@ -107,6 +110,7 @@
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
        that target and the DisableFastUpToDateCheck PropertyGroup. 
        Other similar extension points exist, see Microsoft.Common.targets.
