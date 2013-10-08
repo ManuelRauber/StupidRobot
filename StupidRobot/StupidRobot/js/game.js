@@ -1,12 +1,12 @@
-﻿Game = {	
+﻿Game = {
 	width: function() {
 		return window.innerWidth;
 	},
-	
+
 	height: function() {
 		return window.innerHeight;
 	},
-	
+
 	start: function() {
 		Crafty.init(Game.width(), Game.height());
 		Crafty.canvas.init();

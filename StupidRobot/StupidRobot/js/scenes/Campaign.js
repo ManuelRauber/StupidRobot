@@ -1,4 +1,4 @@
-﻿Crafty.scene('Campaign', function () {
+﻿Crafty.scene('Campaign', function() {
 	Crafty.background('black');
 
 

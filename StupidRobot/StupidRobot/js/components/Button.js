@@ -1,11 +1,11 @@
 ﻿Crafty.c('Button', {
-	Button: function (text) {
+	Button: function(text) {
 		this.text = text;
 
 		return this;
 	},
 
-	init: function () {
+	init: function() {
 		this.requires('Mouse');
 
 		this.w = 250;
@@ -22,10 +22,10 @@
 		gradient.addColorStop(0, '#656722');
 		gradient.addColorStop(1, '#939633');
 		this.hoverGradient = gradient;
-		
+
 		this.isHovering = false;
 
-		this.bind('MouseOver', function () {
+		this.bind('MouseOver', function() {
 			this.isHovering = true;
 			this.trigger('Change');
 		});
@@ -37,14 +37,14 @@
 
 		this.sceneAction = null;
 
-		this.bind('Click', function () {
-		    Crafty.scene(this.sceneAction);
+		this.bind('Click', function() {
+			Crafty.scene(this.sceneAction);
 		});
 
 
 	},
 
-	draw: function () {
+	draw: function() {
 		var ctx = Crafty.canvas.context;
 		ctx.save();
 

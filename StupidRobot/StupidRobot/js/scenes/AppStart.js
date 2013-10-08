@@ -1,4 +1,4 @@
-﻿Crafty.scene('AppStart', function () {
+﻿Crafty.scene('AppStart', function() {
 	Crafty.background('black');
 
 	Crafty.e('2D,Canvas,Text')
@@ -10,29 +10,26 @@
 		});
 
 	Crafty.e('2D,Canvas,ProgressBar')
-        .ProgressBar();
+		.ProgressBar();
 
 	Crafty.load([
-		'/assets/Game/Images/robot-east.scale-100.png',
-		'/assets/Game/Images/robot-north.scale-100.png',
-		'/assets/Game/Images/robot-south.scale-100.png',
-		'/assets/Game/Images/robot-west.scale-100.png',
-		'/assets/Game/Images/rocket.scale-100.png',
-		'/assets/Game/Images/tree.scale-100.png'
-	],
+			'/assets/Game/Images/robot-east.scale-100.png',
+			'/assets/Game/Images/robot-north.scale-100.png',
+			'/assets/Game/Images/robot-south.scale-100.png',
+			'/assets/Game/Images/robot-west.scale-100.png',
+			'/assets/Game/Images/rocket.scale-100.png',
+			'/assets/Game/Images/tree.scale-100.png'
+		],
+		//on load finish
+		function() {
+			Crafty.scene('MainMenu');
+		},
+		//on progress
+		function(e) {
+			Crafty.trigger('update', e.percent - 100);
+		},
+		//on error
+		function(e) {
 
-    //on load finish
-    function () {
-        Crafty.scene('MainMenu');
-    },
-
-    //on progress
-    function (e) {
-        Crafty.trigger('update', e.percent - 100);
-    },
-
-    //on error
-    function (e) {
-        
-	});
+		});
 });
