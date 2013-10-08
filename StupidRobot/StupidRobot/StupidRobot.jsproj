@@ -95,11 +95,12 @@
     <Content Include="assets\Store\WideLogo.scale-140.png" />
     <Content Include="assets\Store\WideLogo.scale-180.png" />
     <Content Include="assets\Store\WideLogo.scale-80.png" />
-    <Content Include="js\components.js" />
-    <Content Include="js\default.js" />
-    <Content Include="js\game.js" />
-    <Content Include="js\scenes\AppStart.js" />
-    <Content Include="js\scenes\MainMenu.js" />
+    <Content Include="compressed\code.js" />
+    <None Include="js\components.js" />
+    <None Include="js\default.js" />
+    <None Include="js\game.js" />
+    <None Include="js\scenes\AppStart.js" />
+    <None Include="js\scenes\MainMenu.js" />
     <Content Include="libs\crafty.js" />
     <Content Include="packages.config" />
     <Content Include="pages\game.css" />
