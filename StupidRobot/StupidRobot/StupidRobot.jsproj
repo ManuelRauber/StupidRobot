@@ -98,7 +98,7 @@
     <None Include="js\components\BackgroundMusicPlayer.js" />
     <None Include="js\components\Button.js" />
     <None Include="js\components\ProgressBar.js" />
-    <None Include="js\default.js" />
+    <None Include="js\main.js" />
     <None Include="js\game.js" />
     <None Include="js\scenes\Campaign.js" />
     <None Include="js\scenes\AppStart.js" />

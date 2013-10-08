@@ -8,6 +8,8 @@
 	var app = WinJS.Application;
 	var activation = Windows.ApplicationModel.Activation;
 
+	addSettingsFlyout();
+
 	app.onactivated = function(args) {
 		if (args.detail.kind === activation.ActivationKind.launch) {
 			if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -29,6 +31,19 @@
 		// asynchronous operation before your application is suspended, call
 		// args.setPromise().
 	};
+
+	function addSettingsFlyout() {
+		var settingsPane = Windows.UI.ApplicationSettings.SettingsPane.getForCurrentView();
+		settingsPane.addEventListener("commandsrequested", onCommandsRequests);
+	}
+
+	function onCommandsRequests(e) {
+		var privacyPolicyCommand = new Windows.UI.ApplicationSettings.SettingsCommand('privacyPolicy', 'Privacy policy', function(command) {
+			Windows.System.Launcher.launchUriAsync(new Windows.Foundataion.Uri('http://cheeseware.de/datenschutzerklarung'));
+		});
+
+		e.request.applicationCommands.append(privacyPolicyCommand);
+	}
 
 	app.start();
 })();
