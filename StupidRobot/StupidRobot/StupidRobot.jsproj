@@ -136,6 +136,8 @@
   -->
   <Target Name="BeforeBuild">
     <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
+		<JSCompress Files="@(DestinationScriptFile)" />
+		
     <ItemGroup>
       <Content Include="@(DestinationScriptFile)">
       </Content>
