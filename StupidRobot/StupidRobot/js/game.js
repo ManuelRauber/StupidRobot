@@ -11,6 +11,8 @@
 		Crafty.init(Game.width(), Game.height());
 		Crafty.canvas.init();
 
+		BackgroundMusicPlayer.start();
+
 		Crafty.scene('AppStart');
 	}
 };

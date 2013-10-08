@@ -19,7 +19,10 @@ Crafty.scene('AppStart', function () {
 		'/assets/Game/Images/robot-south.scale-100.png',
 		'/assets/Game/Images/robot-west.scale-100.png',
 		'/assets/Game/Images/rocket.scale-100.png',
-		'/assets/Game/Images/tree.scale-100.png'
+		'/assets/Game/Images/tree.scale-100.png',
+		'/assets/Game/Sounds/Music/BrightlyFancy.mp3',
+		'/assets/Game/Sounds/Music/DiscoConTutti.mp3',
+		'/assets/Game/Sounds/Music/TheComplex.mp3'
 	], function() {
 		Crafty.scene('MainMenu');
 	});
