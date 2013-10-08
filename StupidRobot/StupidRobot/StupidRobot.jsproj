@@ -71,6 +71,10 @@
     <Content Include="assets\Game\Images\tree.scale-100.png" />
     <Content Include="assets\Game\Images\tree.scale-140.png" />
     <Content Include="assets\Game\Images\tree.scale-180.png" />
+    <Content Include="assets\Game\Sounds\Music\BrightlyFancy.mp3" />
+    <Content Include="assets\Game\Sounds\Music\DiscoConTutti.mp3" />
+    <Content Include="assets\Game\Sounds\Music\readme.txt" />
+    <Content Include="assets\Game\Sounds\Music\TheComplex.mp3" />
     <Content Include="assets\Store\Logo.scale-100.png" />
     <Content Include="assets\Store\Logo.scale-140.png" />
     <Content Include="assets\Store\Logo.scale-180.png" />
