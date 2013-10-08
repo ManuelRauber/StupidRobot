@@ -95,7 +95,6 @@
     <Content Include="assets\Store\WideLogo.scale-140.png" />
     <Content Include="assets\Store\WideLogo.scale-180.png" />
     <Content Include="assets\Store\WideLogo.scale-80.png" />
-    <Content Include="compressed\code.js" />
     <None Include="js\components.js" />
     <None Include="js\default.js" />
     <None Include="js\game.js" />
@@ -112,6 +111,20 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- MS Build Community Tasks -->
+  <PropertyGroup>
+    <MSBuildCommunityTasksPath>$(SolutionDir)\.build</MSBuildCommunityTasksPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
+  <ItemGroup>
+    <SourceScriptFiles Include="js\**\*">
+    </SourceScriptFiles>
+    <DestinationScriptFile Include="compressed\code.js">
+    </DestinationScriptFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="compressed\" />
+  </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
        that target and the DisableFastUpToDateCheck PropertyGroup. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -123,4 +136,7 @@
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
   </PropertyGroup>
   -->
+  <Target Name="BeforeBuild">
+    <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
+  </Target>
 </Project>
