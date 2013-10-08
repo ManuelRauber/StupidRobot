@@ -8,17 +8,10 @@
 			x: -250,
 			y: 50
 		})
-		.click(function() {
+		.click(function () {
 			Game.switchScene(Game.scenes.Campaign);
 		})
-		.bind('startMenuAnimation', function () {
-			this.tween({
-				x: 50
-			}, 10).bind('TweenEnd', function () {
-				this.unbind('TweenEnd');
-				Crafty.trigger('menuanimation1');
-			})
-		});
+		.tweenAnimate(50, 50, 20, 'menuanimation1');
 
 
 	//Play Map button
@@ -29,12 +22,7 @@
 			y: 130
 		})
 		.bind('menuanimation1', function () {
-			this.tween({
-				x: 50
-			}, 10).bind('TweenEnd', function () {
-				this.unbind('TweenEnd');
-				Crafty.trigger('menuanimation2');
-			})
+			this.tweenAnimate(50, 130, 20, 'menuanimation2');
 		});
 
 
@@ -46,12 +34,7 @@
 			y: 210
 		})
 		.bind('menuanimation2', function () {
-			this.tween({
-				x: 50
-			}, 10).bind('TweenEnd', function () {
-				this.unbind('TweenEnd');
-				Crafty.trigger('menuanimation3');
-			})
+			this.tweenAnimate(50, 210, 20, 'menuanimation3');
 		});
 
 
@@ -63,12 +46,7 @@
 			y: 290
 		})
 		.bind('menuanimation3', function () {
-			this.tween({
-				x: 50
-			}, 10).bind('TweenEnd', function () {
-				this.unbind('TweenEnd');
-				Crafty.trigger('menuanimation4');
-			})
+			this.tweenAnimate(50, 290, 20, 'menuanimation4');
 		});
 
 
@@ -80,10 +58,6 @@
 			y: 370
 		})
 		.bind('menuanimation4', function () {
-			this.tween({
-				x: 50
-			}, 10)
+			this.tweenAnimate(50, 370, 20, null);
 		});
-
-	Crafty.trigger('startMenuAnimation');
 });

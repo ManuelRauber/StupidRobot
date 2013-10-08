@@ -43,6 +43,18 @@
 		return this;
 	},
 
+	//perform a tweenanimation on the button
+	tweenAnimate: function(new_x, new_y, duration, follow_trigger) {
+		this.tween({
+			x: new_x,
+			y: new_y
+			}, duration).bind('TweenEnd', function () {
+				this.unbind('TweenEnd');
+				//if this animation is completed, perfom the follow_trigger (if not null)
+				if (follow_trigger != null) Crafty.trigger(follow_trigger);
+			})
+	},
+
 	draw: function() {
 		var ctx = Crafty.canvas.context;
 		ctx.save();
