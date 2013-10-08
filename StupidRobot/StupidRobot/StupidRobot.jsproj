@@ -119,7 +119,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
   <ItemGroup>
-    <SourceScriptFiles Include="js\**\*">
+    <SourceScriptFiles Include="js\**\*.js">
     </SourceScriptFiles>
     <DestinationScriptFile Include="compressed\code.js">
     </DestinationScriptFile>
@@ -135,12 +135,11 @@
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
   </PropertyGroup>
   -->
-  <Target Name="BeforeBuild">
+  <Target Name="BeforeBuild" >
     <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
-    <JSCompress Files="@(DestinationScriptFile)" />
+    <JSCompress Files="@(DestinationScriptFile)" Condition="'$(Configuration)'=='Release'" />
     <ItemGroup>
-      <Content Include="@(DestinationScriptFile)">
-      </Content>
+      <Content Include="@(DestinationScriptFile)"></Content>
     </ItemGroup>
   </Target>
 </Project>
