@@ -12,7 +12,7 @@ Crafty.c("TiledMapBuilder", {
 		
 	tileMapBuilderSetting: {
 		 USE_WEB_WORKERS		:false,
-		 PATH_TO_WORKER_SCRIPT	:'../../modules/create_mocks_module.js',		
+		 PATH_TO_WORKER_SCRIPT	:'./create_mocks_module.js',		
 		 RENDER_METHOD_CANVAS	:'Canvas',
 	     RENDER_METHOD_DOM		:'DOM',	    
 	 },
