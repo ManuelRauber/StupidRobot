@@ -34,14 +34,13 @@
 			this.isHovering = false;
 			this.trigger('Change');
 		});
+	},
 
-		this.sceneAction = null;
+	click: function(callback) {
+		this.unbind('Click');
+		this.bind('Click', callback);
 
-		this.bind('Click', function() {
-			Crafty.scene(this.sceneAction);
-		});
-
-
+		return this;
 	},
 
 	draw: function() {

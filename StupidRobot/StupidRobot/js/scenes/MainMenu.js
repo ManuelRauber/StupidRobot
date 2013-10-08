@@ -1,4 +1,4 @@
-﻿Crafty.scene('MainMenu', function() {
+﻿Crafty.scene('MainMenu', function () {
 	Crafty.background('white');
 
 	//Campaign button
@@ -6,13 +6,12 @@
 		.Button('Campaign')
 		.attr({
 			x: -250,
-			y: 50,
-			sceneAction: 'Campaign'
+			y: 50
 		})
-		.bind('startMenuAnimation', function() {
+		.bind('startMenuAnimation', function () {
 			this.tween({
 				x: 50
-			}, 10).bind('TweenEnd', function() {
+			}, 10).bind('TweenEnd', function () {
 				this.unbind('TweenEnd');
 				Crafty.trigger('menuanimation1');
 			})
@@ -26,10 +25,10 @@
 			x: -250,
 			y: 130
 		})
-		.bind('menuanimation1', function() {
+		.bind('menuanimation1', function () {
 			this.tween({
 				x: 50
-			}, 10).bind('TweenEnd', function() {
+			}, 10).bind('TweenEnd', function () {
 				this.unbind('TweenEnd');
 				Crafty.trigger('menuanimation2');
 			})
@@ -43,10 +42,10 @@
 			x: -250,
 			y: 210
 		})
-		.bind('menuanimation2', function() {
+		.bind('menuanimation2', function () {
 			this.tween({
 				x: 50
-			}, 10).bind('TweenEnd', function() {
+			}, 10).bind('TweenEnd', function () {
 				this.unbind('TweenEnd');
 				Crafty.trigger('menuanimation3');
 			})
@@ -60,10 +59,10 @@
 			x: -250,
 			y: 290
 		})
-		.bind('menuanimation3', function() {
+		.bind('menuanimation3', function () {
 			this.tween({
 				x: 50
-			}, 10).bind('TweenEnd', function() {
+			}, 10).bind('TweenEnd', function () {
 				this.unbind('TweenEnd');
 				Crafty.trigger('menuanimation4');
 			})
@@ -77,7 +76,7 @@
 			x: -250,
 			y: 370
 		})
-		.bind('menuanimation4', function() {
+		.bind('menuanimation4', function () {
 			this.tween({
 				x: 50
 			}, 10)
