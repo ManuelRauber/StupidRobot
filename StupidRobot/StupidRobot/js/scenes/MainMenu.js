@@ -1,4 +1,4 @@
-﻿Crafty.scene('MainMenu', function () {
+﻿Crafty.scene(Game.scenes.MainMenu, function () {
 	Crafty.background('white');
 
 	//Campaign button
@@ -7,6 +7,9 @@
 		.attr({
 			x: -250,
 			y: 50
+		})
+		.click(function() {
+			Game.switchScene(Game.scenes.Campaign);
 		})
 		.bind('startMenuAnimation', function () {
 			this.tween({

@@ -1,4 +1,10 @@
 ﻿Game = {
+	scenes: {
+		Start: 'AppStart',
+		MainMenu: 'MainMenu',
+		Campaign: 'Campaign'
+	},
+
 	width: function() {
 		return window.innerWidth;
 	},
@@ -13,7 +19,11 @@
 
 		BackgroundMusicPlayer.start();
 
-		Crafty.scene('AppStart');
+		Crafty.scene(Game.scenes.Start);
+	},
+	
+	switchScene: function(scene) {
+		Crafty.scene(scene);
 	}
 };
 

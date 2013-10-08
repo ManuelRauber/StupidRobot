@@ -1,4 +1,4 @@
-﻿Crafty.scene('AppStart', function() {
+﻿Crafty.scene(Game.scenes.Start, function() {
 	Crafty.background('black');
 
 	Crafty.e('2D,Canvas,Text')
@@ -22,7 +22,7 @@
 		],
 		//on load finish
 		function() {
-			Crafty.scene('MainMenu');
+			Crafty.scene(Game.scenes.MainMenu);
 		},
 		//on progress
 		function(e) {
