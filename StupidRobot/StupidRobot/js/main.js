@@ -39,7 +39,7 @@
 
 	function onCommandsRequests(e) {
 		var privacyPolicyCommand = new Windows.UI.ApplicationSettings.SettingsCommand('privacyPolicy', 'Privacy policy', function(command) {
-			Windows.System.Launcher.launchUriAsync(new Windows.Foundataion.Uri('http://cheeseware.de/datenschutzerklarung'));
+			Windows.System.Launcher.launchUriAsync(new Windows.Foundation.Uri('http://cheeseware.de/datenschutzerklarung'));
 		});
 
 		e.request.applicationCommands.append(privacyPolicyCommand);
