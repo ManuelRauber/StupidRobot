@@ -101,6 +101,7 @@
     <None Include="js\scenes\AppStart.js" />
     <None Include="js\scenes\MainMenu.js" />
     <None Include="compressed\readme.txt" />
+    <None Include="js\readme.txt" />
     <Content Include="libs\crafty.js" />
     <Content Include="packages.config" />
     <Content Include="pages\game.css" />
@@ -136,8 +137,7 @@
   -->
   <Target Name="BeforeBuild">
     <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
-		<JSCompress Files="@(DestinationScriptFile)" />
-		
+    <JSCompress Files="@(DestinationScriptFile)" />
     <ItemGroup>
       <Content Include="@(DestinationScriptFile)">
       </Content>
