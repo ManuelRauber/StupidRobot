@@ -95,7 +95,9 @@
     <Content Include="assets\Store\WideLogo.scale-140.png" />
     <Content Include="assets\Store\WideLogo.scale-180.png" />
     <Content Include="assets\Store\WideLogo.scale-80.png" />
-    <None Include="js\components.js" />
+    <None Include="js\components\BackgroundMusicPlayer.js" />
+    <None Include="js\components\Button.js" />
+    <None Include="js\components\ProgressBar.js" />
     <None Include="js\default.js" />
     <None Include="js\game.js" />
     <None Include="js\scenes\AppStart.js" />
@@ -118,19 +120,19 @@
     <MSBuildCommunityTasksPath>$(SolutionDir)\.build</MSBuildCommunityTasksPath>
   </PropertyGroup>
   <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
-
-	<!-- JavaScript merge & minification -->
+  <!-- JavaScript merge & minification -->
   <ItemGroup>
     <SourceScriptFiles Include="js\**\*.js">
     </SourceScriptFiles>
     <DestinationScriptFile Include="compressed\code.js">
     </DestinationScriptFile>
   </ItemGroup>
-  <Target Name="BeforeBuild" >
+  <Target Name="BeforeBuild">
     <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
     <JSCompress Files="@(DestinationScriptFile)" Condition="'$(Configuration)'=='Release'" />
     <ItemGroup>
-      <Content Include="@(DestinationScriptFile)"></Content>
+      <Content Include="@(DestinationScriptFile)">
+      </Content>
     </ItemGroup>
   </Target>
 </Project>
