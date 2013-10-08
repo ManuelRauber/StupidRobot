@@ -118,6 +118,8 @@
     <MSBuildCommunityTasksPath>$(SolutionDir)\.build</MSBuildCommunityTasksPath>
   </PropertyGroup>
   <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
+
+	<!-- JavaScript merge & minification -->
   <ItemGroup>
     <SourceScriptFiles Include="js\**\*.js">
     </SourceScriptFiles>
