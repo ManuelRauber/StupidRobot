@@ -38,7 +38,7 @@
 		this.sceneAction = null;
 
 		this.bind('Click', function () {
-		    Crafty.scene(sceneAction);
+		    Crafty.scene(this.sceneAction);
 		});
 
 
