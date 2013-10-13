@@ -108,10 +108,10 @@
     <None Include="js\scenes\MainMenu.js" />
     <None Include="compressed\readme.txt" />
     <None Include="js\readme.txt" />
+    <Content Include="js\maps\testmap.js" />
     <Content Include="libs\crafty.js" />
     <Content Include="libs\create_mocks_module.js" />
     <Content Include="libs\tiledmapbuilder.js" />
-    <Content Include="maps\testmap.js" />
     <Content Include="packages.config" />
     <Content Include="pages\game.css" />
     <Content Include="pages\game.html" />
