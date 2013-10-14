@@ -10,11 +10,6 @@
 			return this;
 		},
 
-		init: function () {
-			this.windowWidth = StupidRobot.Game.width;
-			this.windowHeight = StupidRobot.Game.height;
-		},
-
 		draw: function () {
 			var ctx = Crafty.canvas.context;
 			ctx.save();
