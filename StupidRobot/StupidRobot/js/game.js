@@ -1,30 +1,72 @@
-﻿Game = {
-	scenes: {
-		Start: 'AppStart',
-		MainMenu: 'MainMenu',
-		Campaign: 'Campaign'
-	},
+﻿(function() {
+	"use strict";
 
-	width: function() {
-		return window.innerWidth;
-	},
+	var gameClass = WinJS.Class.define(
+		null,
+		{
+			width: {
+				get: function() {
+					return window.innerWidth;
+				}
+			},
+			
+			height: {
+				get: function() {
+					return window.innerHeight;
+				}
+			},
+			
+			run: function () {
+				Crafty.init(this.width, this.height);
+				Crafty.canvas.init();
 
-	height: function() {
-		return window.innerHeight;
-	},
+				StupidRobot.BackgroundMusicPlayer.start();
 
-	start: function() {
-		Crafty.init(Game.width(), Game.height());
-		Crafty.canvas.init();
+				this.switchScene(StupidRobot.Scenes.AppStart);
+			},
+			
+			switchScene: function(scene) {
+				Crafty.scene(scene);
+			}
+		}
+	);
 
-		BackgroundMusicPlayer.start();
+	var scenes = WinJS.Class.define(
+		null,
+		null,
+		{
+			AppStart: {
+				get: function() {
+					return 'AppStart';
+				}
+			},
+			
+			Campaign: {
+				get: function() {
+					return 'Campaign';
+				}
+			},
+			
+			MainMenu: {
+				get: function() {
+					return 'MainMenu';
+				}
+			}
+		}
+	);
 
-		Crafty.scene(Game.scenes.Start);
-	},
-	
-	switchScene: function(scene) {
-		Crafty.scene(scene);
-	}
-};
+	var game = new gameClass();
 
-window.addEventListener('load', Game.start);
+	WinJS.Namespace.define("StupidRobot", {
+		Game: {
+			get: function() {
+				return game;
+			}
+		},
+		Scenes: scenes
+	});
+})();
+
+window.addEventListener('load', function() {
+	StupidRobot.Game.run();
+});
