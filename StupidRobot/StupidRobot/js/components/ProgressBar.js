@@ -12,7 +12,7 @@
 
 		this.bind('update', function(progress) {
 			this.progress = progress;
-			this.draw();
+			this.trigger('Change');
 		});
 	},
 
