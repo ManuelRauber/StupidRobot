@@ -49,11 +49,13 @@
 			this.tween({
 				x: new_x,
 				y: new_y
-			}, duration).bind('TweenEnd', function () {
+			}, duration).bind('TweenEnd', function() {
 				this.unbind('TweenEnd');
 				//if this animation is completed, perfom the follow_trigger (if not null)
-				if (follow_trigger != null) Crafty.trigger(follow_trigger);
-			})
+				if (follow_trigger != null) {
+					Crafty.trigger(follow_trigger);
+				}
+			});
 		},
 
 		draw: function () {
