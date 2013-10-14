@@ -1,7 +1,7 @@
 ﻿(function() {
 	"use strict";
 
-	var game = WinJS.Class.define(
+	var gameClass = WinJS.Class.define(
 		null,
 		{
 			width: {
@@ -16,11 +16,11 @@
 				}
 			},
 			
-			run: function() {
+			run: function () {
 				Crafty.init(this.width, this.height);
 				Crafty.canvas.init();
-				
-				// Backgroundmusicplayer
+
+				StupidRobot.BackgroundMusicPlayer.start();
 
 				this.switchScene(StupidRobot.Scenes.AppStart);
 			},
@@ -55,10 +55,18 @@
 		}
 	);
 
+	var game = new gameClass();
+
 	WinJS.Namespace.define("StupidRobot", {
-		Game: new game(),
+		Game: {
+			get: function() {
+				return game;
+			}
+		},
 		Scenes: scenes
 	});
-	
-	window.addEventListener('load', StupidRobot.Game.run);
 })();
+
+window.addEventListener('load', function() {
+	StupidRobot.Game.run();
+});

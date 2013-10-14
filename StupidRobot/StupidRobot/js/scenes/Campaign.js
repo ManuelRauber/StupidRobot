@@ -29,4 +29,4 @@
 				this.z = Math.floor(this._y + this._h);
 			});
 	});
-});
+})();

@@ -1,15 +1,15 @@
 ﻿(function () {
 	"use strict";
 
-	Crafty.scene(StupidRobot.Scenes.Start, function() {
+	Crafty.scene(StupidRobot.Scenes.AppStart, function() {
 		Crafty.background('black');
 
 		Crafty.e('2D,Canvas,Text')
 			.text('Initialize Loading')
 			.attr({
-				w: StupidRobot.Game.width(),
+				w: StupidRobot.Game.width,
 				x: 0,
-				y: StupidRobot.Game.height() / 2 - 25
+				y: StupidRobot.Game.height / 2 - 25
 			});
 
 		Crafty.e('2D,Canvas,ProgressBar')
@@ -25,7 +25,7 @@
 			],
 			//on load finish
 			function() {
-				Crafty.scene(StupidRobot.Game.scenes.MainMenu);
+				Crafty.scene(StupidRobot.Scenes.MainMenu);
 			},
 			//on progress
 			function(e) {
@@ -36,4 +36,4 @@
 
 			});
 	});
-});
+})();

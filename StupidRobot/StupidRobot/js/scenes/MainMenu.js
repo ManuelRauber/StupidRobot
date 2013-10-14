@@ -1,7 +1,6 @@
 ﻿(function () {
 	"use strict";
 
-
 	Crafty.scene(StupidRobot.Scenes.MainMenu, function () {
 		Crafty.background('white');
 
@@ -13,7 +12,7 @@
 				y: 50
 			})
 			.click(function () {
-				Game.switchScene(StupidRobot.Game.scenes.Campaign);
+				StupidRobot.Game.switchScene(StupidRobot.Scenes.Campaign);
 			})
 			.tweenAnimate(50, 50, 20, 'menuanimation1');
 
@@ -61,4 +60,4 @@
 				this.tweenAnimate(50, 370, 20, null);
 			});
 	});
-});
+})();
