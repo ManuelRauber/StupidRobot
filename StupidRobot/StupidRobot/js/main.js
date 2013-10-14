@@ -43,13 +43,13 @@
 		});
 
 		var settingsCommand = new Windows.UI.ApplicationSettings.SettingsCommand('settings', 'Settings', function(command) {
-			// TODO: Open the settings page
+			WinJS.UI.SettingsFlyout.showSettings('settings', '/pages/preferences/preferences.html');
 		});
 
 		var imprintCommand = new Windows.UI.ApplicationSettings.SettingsCommand('imprint', 'Imprint', function(command) {
 			// TODO: Open the imprint page
 		});
-		
+
 		e.request.applicationCommands.append(privacyPolicyCommand);
 		e.request.applicationCommands.append(settingsCommand);
 		e.request.applicationCommands.append(imprintCommand);
