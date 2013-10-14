@@ -99,6 +99,7 @@
     <Content Include="assets\Store\WideLogo.scale-180.png" />
     <Content Include="assets\Store\WideLogo.scale-80.png" />
     <None Include="js\components\BackgroundMusicPlayer.js" />
+    <None Include="js\components\Grid.js" />
     <None Include="js\components\Button.js" />
     <None Include="js\components\ProgressBar.js" />
     <None Include="js\main.js" />
