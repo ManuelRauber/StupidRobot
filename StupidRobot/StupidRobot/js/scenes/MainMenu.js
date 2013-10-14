@@ -34,6 +34,9 @@
 				x: -250,
 				y: 210
 			})
+			.click(function () {
+				StupidRobot.Game.switchScene(StupidRobot.Scenes.Editor);
+			})
 			.bind('menuanimation2', function () {
 				this.tweenAnimate(50, 210, 20, 'menuanimation3');
 			});

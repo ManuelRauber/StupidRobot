@@ -51,6 +51,12 @@
 				get: function() {
 					return 'MainMenu';
 				}
+			},
+
+			Editor: {
+				get: function() {
+					return 'Editor';
+				}
 			}
 		}
 	);
