@@ -52,7 +52,7 @@
 		
 		e.request.applicationCommands.append(privacyPolicyCommand);
 		e.request.applicationCommands.append(settingsCommand);
-		e.request.ApplicationCommands.append(imprintCommand);
+		e.request.applicationCommands.append(imprintCommand);
 	}
 
 	app.start();
