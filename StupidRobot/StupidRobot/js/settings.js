@@ -5,7 +5,7 @@
 		IsMusicEnabled: "IsMusicEnabled"
 	};
 
-	var preferencesClass = WinJS.Class.define(
+	var settingsClass = WinJS.Class.define(
 		function() {
 			this._roamingSettings = Windows.Storage.ApplicationData.current.roamingSettings;
 		},
@@ -27,12 +27,12 @@
 		},
 		null);
 
-	var preferences = new preferencesClass();
+	var settings = new settingsClass();
 
 	WinJS.Namespace.define('StupidRobot', {		
-		Preferences: {
+		Settings: {
 			get: function() {
-				return preferences;
+				return settings;
 			}
 		}
 	});

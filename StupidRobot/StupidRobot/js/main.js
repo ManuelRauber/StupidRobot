@@ -42,8 +42,8 @@
 			Windows.System.Launcher.launchUriAsync(new Windows.Foundation.Uri('http://cheeseware.de/datenschutzerklarung'));
 		});
 
-		var settingsCommand = new Windows.UI.ApplicationSettings.SettingsCommand('settings', 'Settings', function(command) {
-			WinJS.UI.SettingsFlyout.showSettings('settings', '/pages/preferences/preferences.html');
+		var settingsCommand = new Windows.UI.ApplicationSettings.SettingsCommand('settings', 'Settings', function (command) {
+			WinJS.UI.SettingsFlyout.showSettings('settings', '/pages/settings/settings.html');
 		});
 
 		var imprintCommand = new Windows.UI.ApplicationSettings.SettingsCommand('imprint', 'Imprint', function(command) {
