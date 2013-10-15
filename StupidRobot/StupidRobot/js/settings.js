@@ -17,10 +17,6 @@
 					return this._roamingSettings.values[settingKeys.IsMusicEnabled];
 				},
 				set: function(value) {
-					if (typeof(value) != "boolean") {
-						throw "value is not boolean";
-					}
-
 					this._roamingSettings.values[settingKeys.IsMusicEnabled] = value;
 				}
 			},
