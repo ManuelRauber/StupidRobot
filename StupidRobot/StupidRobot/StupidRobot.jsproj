@@ -101,6 +101,7 @@
     <None Include="js\pages\settings.js" />
     <Content Include="pages\game\game.css" />
     <Content Include="pages\game\game.html" />
+    <Content Include="pages\imprint\imprint.html" />
     <Content Include="pages\settings\settings.html" />
     <None Include="js\components\BackgroundMusicPlayer.js" />
     <None Include="js\components\EditorTaskbar.js" />
