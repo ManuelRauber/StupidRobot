@@ -47,7 +47,7 @@
 		});
 
 		var imprintCommand = new Windows.UI.ApplicationSettings.SettingsCommand('imprint', 'Imprint', function(command) {
-			// TODO: Open the imprint page
+			WinJS.UI.SettingsFlyout.showSettings('imprint', '/pages/imprint/imprint.html');
 		});
 
 		e.request.applicationCommands.append(privacyPolicyCommand);
