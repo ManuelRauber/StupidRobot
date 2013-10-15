@@ -103,10 +103,13 @@
     <Content Include="pages\game\game.html" />
     <Content Include="pages\preferences\preferences.html" />
     <None Include="js\components\BackgroundMusicPlayer.js" />
+    <None Include="js\components\EditorTaskbar.js" />
+    <None Include="js\components\Grid.js" />
     <None Include="js\components\Button.js" />
     <None Include="js\components\ProgressBar.js" />
     <None Include="js\main.js" />
     <None Include="js\game.js" />
+    <None Include="js\scenes\Editor.js" />
     <None Include="js\scenes\Campaign.js" />
     <None Include="js\scenes\AppStart.js" />
     <None Include="js\scenes\MainMenu.js" />
