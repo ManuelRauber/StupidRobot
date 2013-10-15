@@ -49,7 +49,7 @@
 				y: 290
 			})
   		.click(function () {
-  			WinJS.SettingsFlyout.showSettings('settings', '/pages/settings/settings.html');
+  			WinJS.UI.SettingsFlyout.showSettings('settings', '/pages/settings/settings.html');
   		})
 			.bind('menuanimation3', function () {
 				this.tweenAnimate(50, 290, 20, 'menuanimation4');
