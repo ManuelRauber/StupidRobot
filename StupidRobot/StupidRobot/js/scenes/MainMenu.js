@@ -49,7 +49,7 @@
 				y: 290
 			})
   		.click(function () {
-  			WinJS.UI.SettingsFlyout.showSettings('settings', '/pages/settings/settings.html');
+  			StupidRobot.Settings.showFlyout();
   		})
 			.bind('menuanimation3', function () {
 				this.tweenAnimate(50, 290, 20, 'menuanimation4');

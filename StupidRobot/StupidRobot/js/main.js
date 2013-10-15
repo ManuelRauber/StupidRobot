@@ -43,7 +43,7 @@
 		});
 
 		var settingsCommand = new Windows.UI.ApplicationSettings.SettingsCommand('settings', 'Settings', function (command) {
-			WinJS.UI.SettingsFlyout.showSettings('settings', '/pages/settings/settings.html');
+			StupidRobot.Settings.showFlyout();
 		});
 
 		var imprintCommand = new Windows.UI.ApplicationSettings.SettingsCommand('imprint', 'Imprint', function(command) {
