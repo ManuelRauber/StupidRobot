@@ -1,4 +1,6 @@
 ﻿(function () {
+	"use strict";
+	
 	Crafty.c('Grid', {
 		Grid: function (x1, y1, x2, y2, blocks) {
 			this.x1 = x1;

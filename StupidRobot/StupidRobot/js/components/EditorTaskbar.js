@@ -1,4 +1,6 @@
 ﻿(function () {
+	"use strict";
+	
 	Crafty.c('EditorTaskbar', {
 		EditorTaskbar: function (x, y, w, h) {
 			this.x = x;
