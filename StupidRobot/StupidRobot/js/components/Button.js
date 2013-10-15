@@ -1,4 +1,6 @@
 ﻿(function () {
+	"use strict";
+	
 	Crafty.c('Button', {
 		Button: function (text) {
 			this.text = text;
