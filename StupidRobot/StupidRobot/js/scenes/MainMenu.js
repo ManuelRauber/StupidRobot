@@ -45,7 +45,7 @@
 				y: 290
 			})
 			.click(function () {
-				StupidRobot.Settings.showFlyout();
+				StupidRobot.Flyouts.showSettings();
 			})
 			.animation(StupidRobot.Animations.FlyInFromLeft, 'menuanimation3', 'menuanimation4');
 
@@ -57,6 +57,9 @@
 				x: 50,
 				y: 370
 			})
+		  .click(function() {
+			  StupidRobot.Flyouts.showImprint();
+		  })
 			.animation(StupidRobot.Animations.FlyInFromLeft, 'menuanimation4');
 
 	});

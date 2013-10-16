@@ -19,10 +19,6 @@
 				set: function(value) {
 					this._roamingSettings.values[settingKeys.IsMusicEnabled] = value;
 				}
-			},
-			
-			showFlyout: function() {
-				WinJS.UI.SettingsFlyout.showSettings('settings', '/pages/settings/settings.html');
 			}
 		},
 		null);
