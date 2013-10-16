@@ -2,3 +2,21 @@
 	padding: 0;
 	margin: 0;
 }
+
+#nowPlaying {
+	color: gray;
+	font-size: 80%;
+	margin: 0;
+}
+
+#backgroundMusicFlyout {
+	margin: 0 10px 10px 0;
+}
+
+#backgroundMusicFlyoutTitle {
+	font-size: 105%;
+}
+
+#backgroundMusicFlyoutInterpret {
+	margin: 0;
+}
