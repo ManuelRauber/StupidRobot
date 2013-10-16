@@ -10,15 +10,15 @@
 			get: function () {
 				return [{
 						title: 'The Complex',
-						interpret: 'Kevin MacLeod',
+						interpret: 'Kevin MacLeod (incomptech.com)',
 						file: '/assets/Game/Sounds/Music/TheComplex.mp3'
 					}, {
 						title: 'Disco con Tutti',
-						interpret: 'Kevin MacLeod',
+						interpret: 'Kevin MacLeod (incomptech.com)',
 						file: '/assets/Game/Sounds/Music/DiscoConTutti.mp3'
 					}, {
 						title: 'Brightly Fancy',
-						interpret: 'Kevin MacLeod',
+						interpret: 'Kevin MacLeod (incomptech.com)',
 						file: '/assets/Game/Sounds/Music/BrightlyFancy.mp3'
 					}];
 			}
