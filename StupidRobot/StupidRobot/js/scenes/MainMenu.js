@@ -49,7 +49,6 @@
 			})
 			.animation(StupidRobot.Animations.FlyInFromLeft, 'menuanimation3', 'menuanimation4');
 
-
 		//Credits button
 		Crafty.e('2D,Canvas,Button,TweenAnimation')
 			.Button('Credits')
@@ -61,6 +60,5 @@
 			  StupidRobot.Flyouts.showImprint();
 		  })
 			.animation(StupidRobot.Animations.FlyInFromLeft, 'menuanimation4');
-
 	});
 })();
