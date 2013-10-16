@@ -15,7 +15,6 @@
 				StupidRobot.Game.switchScene(StupidRobot.Scenes.Campaign);
 			})
 			.animation(StupidRobot.Animations.FlyInFromLeft, null, 'menuanimation1');
-			//.flyIn(StupidRobot.Animation.StartDirection.FromLeft, 'menuanimation1');
 
 		//Play Map button
 		Crafty.e('2D,Canvas,Button,TweenAnimation')
