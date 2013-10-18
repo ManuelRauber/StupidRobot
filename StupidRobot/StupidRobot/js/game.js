@@ -73,6 +73,7 @@
 	});
 })();
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
+	WinJS.UI.processAll();
 	StupidRobot.Game.run();
 });
