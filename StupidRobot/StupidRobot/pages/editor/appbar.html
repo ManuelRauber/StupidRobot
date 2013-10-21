@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Editor</title>
+	<script type="text/javascript" src="//Microsoft.WinJS.2.0/js/base.js"></script>
+	<script type="text/javascript" src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+	<script type="text/javascript" src="/compressed/code.js"></script>
+	<!-- css -->
+	<link rel="stylesheet" href="//Microsoft.WinJS.2.0/css/ui-light.css" />
+	<link rel="stylesheet" href="/pages/game/game.css" />
+</head>
+<body>
+	<div id="editor_manageBar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement: 'top'}">
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'save',
+                    label:'save',
+                    icon:'save',
+                    section:'global',
+                    tooltip:'save the map'
+                    }"></button>
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'load',
+                    label:'load',
+                    icon:'import',
+                    section:'global',
+                    tooltip:'load the map'
+                    }"></button>
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'new',
+                    label:'new',
+                    icon:'add',
+                    section:'global',
+                    tooltip:'new map'
+                    }"></button>
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'share',
+                    label:'share',
+                    icon:'syncfolder',
+                    section:'global',
+                    tooltip:'share with community'
+                    }"></button>
+	</div>
+	<div id="editor_editBar" data-win-control="WinJS.UI.AppBar" data-win-options="">
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'save',
+                    label:'save',
+                    icon:'save',
+                    section:'global',
+                    tooltip:'save the map'
+                    }"></button>
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'load',
+                    label:'load',
+                    icon:'import',
+                    section:'global',
+                    tooltip:'load the map'
+                    }"></button>
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'new',
+                    label:'new',
+                    icon:'add',
+                    section:'global',
+                    tooltip:'new map'
+                    }"></button>
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'share',
+                    label:'share',
+                    icon:'syncfolder',
+                    section:'global',
+                    tooltip:'share with community'
+                    }"></button>
+	</div>
+</body>
+</html>
