@@ -215,3 +215,4 @@ pip-log.txt
 .mr.developer.cfg
 
 /StupidRobot/StupidRobot/compressed/code.js
+/StupidRobot/StupidRobot/libs/require.js
