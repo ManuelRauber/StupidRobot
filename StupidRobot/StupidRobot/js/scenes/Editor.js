@@ -4,7 +4,7 @@
 	var page = WinJS.UI.Pages.define("/pages/game/game.html", {
 		ready: function (element, options) {
 
-			var basicFragmentLoadDiv = element.querySelector("#pageBody");
+			var basicFragmentLoadDiv = document.getElementById("pageBody");
 			// Read fragment from the HTML file and load it into the div.  Note 
 			// Fragments.renderCopy() returns a promise which a done() statement 
 			// is attached to in order to perform additional processing or handle errors 
@@ -14,7 +14,8 @@
 				.done(
 					function () {
 						WinJS.log && WinJS.log("successfully loaded fragment", "sample", "status");
-						manageBar = document.getElementById('editor_manageBar').winControl;
+						WinJS.UI.processAll();
+						var manageBar = document.getElementById('editor_manageBar').winControl;
 						manageBar.show();
 					},
 					function (error) {
