@@ -1,9 +1,6 @@
 ﻿(function () {
 	"use strict";
 
-	//add appBar
-	StupidRobot.Utils.appendAppBar('pageBody', '/pages/editor/appbar.html');
-
 	Crafty.scene(StupidRobot.Scenes.Editor, function() {
 		Crafty.background('green');
 
@@ -20,7 +17,9 @@
 			.EditorTaskbar(windowWidth - 200, 0, 200, windowHeight);
 
 		var manageBar = document.getElementById('editor_manageBar').winControl;
+		var editBar = document.getElementById('editor_editBar').winControl;
 		manageBar.show();
+		editBar.show();
 	});
 
 })();

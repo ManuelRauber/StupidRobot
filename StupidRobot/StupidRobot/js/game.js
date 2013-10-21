@@ -61,25 +61,28 @@
 		}
 	);
 
-	var appBarAppender = WinJS.Class.define(
+	var htmlAppender = WinJS.Class.define(
 		null,
 		{
-			appendAppBar: function (div, htmlfragment) {
+			append: function (originhtml, div, htmlfragment) {
 
-				var page = WinJS.UI.Pages.define("/pages/game/game.html", {
+				var page = WinJS.UI.Pages.define(originhtml, {
 					ready: function (element, options) {
 
-						var basicFragmentLoadDiv = document.getElementById(div);
-						WinJS.UI.Fragments.renderCopy(htmlfragment, basicFragmentLoadDiv)
-						.done(
-							function () {
-								console.log("successfully loaded fragment", "sample", "status");
-								WinJS.UI.processAll();
-							},
-							function (error) {
-								console.log("error loading fragment: " + error, "sample", "error");
-							}
-						);
+						for (var i = 0; i < htmlfragment.length ; i++)
+						{
+							var basicFragmentLoadDiv = document.getElementById(div);
+							WinJS.UI.Fragments.renderCopy(htmlfragment[i], basicFragmentLoadDiv)
+							.done(
+								function () {
+									console.log("successfully loaded fragment", "sample", "status");
+									WinJS.UI.processAll();
+								},
+								function (error) {
+									console.log("error loading fragment: " + error, "sample", "error");
+								}
+							);
+						}
 					},
 					unload: function () {
 
@@ -88,7 +91,7 @@
 			}
 		});
 
-	var appBars = new appBarAppender();
+	var htmlappender = new htmlAppender();
 	var game = new gameClass();
 
 	WinJS.Namespace.define("StupidRobot", {
@@ -99,7 +102,7 @@
 		},
 		Utils: {
 			get: function() {
-				return appBars;
+				return htmlappender;
 			}
 		},
 		Scenes: scenes
@@ -108,5 +111,12 @@
 
 window.addEventListener('load', function () {
 	WinJS.UI.processAll();
+
+	//add AppBars
+	StupidRobot.Utils.append('/pages/game/game.html', 'pageBody', [
+	'/pages/appBars/editor_top.html',
+	'/pages/appBars/editor_bottom.html'
+	]);
+
 	StupidRobot.Game.run();
 });
