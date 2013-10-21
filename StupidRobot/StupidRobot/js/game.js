@@ -61,12 +61,43 @@
 		}
 	);
 
+	var divAppender = WinJS.Class.define(
+		null,
+		{
+			appendHTML: function (div, htmlfragment) {
+				var basicFragmentLoadDiv = document.getElementById(div);
+				WinJS.UI.Fragments.renderCopy(htmlfragment,	basicFragmentLoadDiv)
+				.done(
+					function () {
+						WinJS.log && WinJS.log("successfully loaded fragment", "sample", "status");
+						WinJS.UI.processAll();
+
+						var manageBar = document.getElementById('editor_manageBar');
+						if (manageBar != undefined)
+							manageBar.winControl.show();
+						
+					},
+					function (error) {
+						WinJS.log && WinJS.log("error loading fragment: " + error, "sample", "error");
+					}
+				);
+			}
+		}
+	);
+
+
+	var appender = new divAppender();
 	var game = new gameClass();
 
 	WinJS.Namespace.define("StupidRobot", {
 		Game: {
 			get: function() {
 				return game;
+			}
+		},
+		Utils: {
+			get: function() {
+				return appender;
 			}
 		},
 		Scenes: scenes
