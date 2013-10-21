@@ -61,7 +61,6 @@
 		}
 	);
 
-	var htmlappender = new htmlAppender();
 	var game = new gameClass();
 
 	WinJS.Namespace.define("StupidRobot", {
