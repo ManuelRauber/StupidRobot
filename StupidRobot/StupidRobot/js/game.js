@@ -61,14 +61,20 @@
 		}
 	);
 
+
+	/**
+	* htmlAppender
+	*	methods:
+	*	+append(String originhtml, String div, StringArray htmlfragment)
+	*/
 	var htmlAppender = WinJS.Class.define(
 		null,
 		{
 			append: function (originhtml, div, htmlfragment) {
-
+				//this operation can only be done once!
 				var page = WinJS.UI.Pages.define(originhtml, {
 					ready: function (element, options) {
-
+						//iterate through the htmlfragment array
 						for (var i = 0; i < htmlfragment.length ; i++)
 						{
 							var basicFragmentLoadDiv = document.getElementById(div);
@@ -85,7 +91,7 @@
 						}
 					},
 					unload: function () {
-
+						//TODO
 					}
 				});
 			}

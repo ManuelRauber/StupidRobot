@@ -7,9 +7,6 @@
 		var windowWidth = StupidRobot.Game.width;
 		var windowHeight = StupidRobot.Game.height;
 
-		//var manageBar;
-		//var editBar;
-
 		Crafty.e('2D, Canvas, Grid')
 			.Grid(0, 0, windowWidth - 200, windowHeight, 20);
 		
