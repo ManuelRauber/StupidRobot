@@ -2,6 +2,7 @@
 	"use strict";
 
 	var filesToInclude = [
+		'/js/utils/HtmlUtilities.js',
 		'/js/game.js',
 		'/js/components/animation/AnimationBase.js',
 		'/js/components/animation/FlyIn.js',
@@ -19,9 +20,10 @@
 		'/js/scenes/Campaign.js',
 		'/js/scenes/Editor.js',
 		'/js/scenes/MainMenu.js',
-		'/js/flyouts.js',
+		'/js/utils/flyouts.js',
 		'/js/main.js',
-		'/js/settings.js'
+		'/js/utils/settings.js'
+		
 	];
 	for (var i = 0; i < filesToInclude.length; i++) {
 		var fileToInclude = document.createElement('script');

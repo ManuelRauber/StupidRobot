@@ -104,9 +104,11 @@
     <None Include="js\components\animation\AnimationBase.js" />
     <None Include="js\components\animation\FlyIn.js" />
     <None Include="js\pages\imprint.js" />
+    <None Include="js\utils\HtmlUtilities.js" />
     <Content Include="pages\appBars\editor_bottom.html" />
     <Content Include="pages\appBars\editor_top.html" />
-    <None Include="js\flyouts.js" />
+    <None Include="js\utils\flyouts.js" />
+    <None Include="js\utils\settings.js" />
     <None Include="libs\require.debug.js" />
     <None Include="libs\require.release.js" />
     <Content Include="pages\game\game.css" />
@@ -128,7 +130,6 @@
     <None Include="compressed\readme.txt" />
     <None Include="js\readme.txt" />
     <None Include="js\maps\testmap.js" />
-    <None Include="js\settings.js" />
     <Content Include="libs\crafty.js" />
     <Content Include="libs\create_mocks_module.js" />
     <Content Include="libs\tiledmapbuilder.js" />

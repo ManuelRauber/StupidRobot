@@ -61,42 +61,6 @@
 		}
 	);
 
-
-	/**
-	* htmlAppender
-	*	methods:
-	*	+append(String originhtml, String div, StringArray htmlfragment)
-	*/
-	var htmlAppender = WinJS.Class.define(
-		null,
-		{
-			append: function (originhtml, div, htmlfragment) {
-				//this operation can only be done once!
-				var page = WinJS.UI.Pages.define(originhtml, {
-					ready: function (element, options) {
-						//iterate through the htmlfragment array
-						for (var i = 0; i < htmlfragment.length ; i++)
-						{
-							var basicFragmentLoadDiv = document.getElementById(div);
-							WinJS.UI.Fragments.renderCopy(htmlfragment[i], basicFragmentLoadDiv)
-							.done(
-								function () {
-									console.log("successfully loaded fragment", "sample", "status");
-									WinJS.UI.processAll();
-								},
-								function (error) {
-									console.log("error loading fragment: " + error, "sample", "error");
-								}
-							);
-						}
-					},
-					unload: function () {
-						//TODO
-					}
-				});
-			}
-		});
-
 	var htmlappender = new htmlAppender();
 	var game = new gameClass();
 
@@ -104,11 +68,6 @@
 		Game: {
 			get: function() {
 				return game;
-			}
-		},
-		Utils: {
-			get: function() {
-				return htmlappender;
 			}
 		},
 		Scenes: scenes
