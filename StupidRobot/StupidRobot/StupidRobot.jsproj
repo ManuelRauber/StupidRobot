@@ -55,6 +55,7 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="assets\Game\Images\Backgrounds\editor_Background.png" />
     <Content Include="assets\Game\Images\Maps\ground.png" />
     <Content Include="assets\Game\Images\Maps\obstacles.png" />
     <Content Include="assets\Game\Images\Maps\ogre.png" />
