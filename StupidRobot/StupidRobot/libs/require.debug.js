@@ -15,7 +15,6 @@
 		'/js/maps/testmap.js',
 		'/js/pages/imprint.js',
 		'/js/pages/settings.js',
-		'/js/scenes/Scenes.js',
 		'/js/scenes/AppStart.js',
 		'/js/scenes/Campaign.js',
 		'/js/scenes/Editor.js',
@@ -23,8 +22,8 @@
 		'/js/utils/flyouts.js',
 		'/js/main.js',
 		'/js/utils/settings.js'
-		
 	];
+	
 	for (var i = 0; i < filesToInclude.length; i++) {
 		var fileToInclude = document.createElement('script');
 		fileToInclude.setAttribute('type', 'text/javascript');
