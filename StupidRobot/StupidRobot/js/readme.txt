@@ -4,3 +4,5 @@
 - Select "None" as "Package Action"
 
 All files in this folder will get merged into one and then compressed.
+
+After adding a file you need to insert it into libs\require.debug.js!

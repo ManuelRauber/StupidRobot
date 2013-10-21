@@ -104,9 +104,11 @@
     <None Include="js\components\animation\AnimationBase.js" />
     <None Include="js\components\animation\FlyIn.js" />
     <None Include="js\pages\imprint.js" />
-    <Content Include="js\flyouts.js" />
     <Content Include="pages\appBars\editor_bottom.html" />
     <Content Include="pages\appBars\editor_top.html" />
+    <None Include="js\flyouts.js" />
+    <None Include="libs\require.debug.js" />
+    <None Include="libs\require.release.js" />
     <Content Include="pages\game\game.css" />
     <Content Include="pages\game\game.html" />
     <Content Include="pages\imprint\imprint.css" />
@@ -126,7 +128,7 @@
     <None Include="compressed\readme.txt" />
     <None Include="js\readme.txt" />
     <None Include="js\maps\testmap.js" />
-    <Content Include="js\settings.js" />
+    <None Include="js\settings.js" />
     <Content Include="libs\crafty.js" />
     <Content Include="libs\create_mocks_module.js" />
     <Content Include="libs\tiledmapbuilder.js" />
@@ -151,12 +153,28 @@
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
   </ItemGroup>
-  <Target Name="BeforeBuild">
-    <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
-    <JSCompress Files="@(DestinationScriptFile)" Condition="'$(Configuration)'=='Release'" />
+  <Target Name="TransformRequireJs">
+    <Copy SourceFiles="libs\require.debug.js" DestinationFiles="libs\require.js" Condition="'$(Configuration)'!='Release'" />
+    <Copy SourceFiles="libs\require.release.js" DestinationFiles="libs\require.js" Condition="'$(Configuration)'=='Release'" />
     <ItemGroup>
-      <Content Include="@(DestinationScriptFile)">
-      </Content>
+      <Content Include="libs\require.js" />
     </ItemGroup>
+  </Target>
+  <Target Name="CopyDebugScriptFiles" Condition="'$(Configuration)'!='Release'">
+    <ItemGroup>
+      <Content Include="@(SourceScriptFiles)" />
+    </ItemGroup>
+  </Target>
+  <Target Name="UglifyScriptFiles" Condition="'$(Configuration)'=='Release'">
+    <Merge SourceFiles="@(SourceScriptFiles)" DestinationFile="@(DestinationScriptFile)" />
+    <JSCompress Files="@(DestinationScriptFile)" />
+    <ItemGroup>
+      <Content Include="@(DestinationScriptFile)" />
+    </ItemGroup>
+  </Target>
+  <Target Name="BeforeBuild">
+    <CallTarget Targets="TransformRequireJs" />
+    <CallTarget Targets="CopyDebugScriptFiles" />
+    <CallTarget Targets="UglifyScriptFiles" />
   </Target>
 </Project>
