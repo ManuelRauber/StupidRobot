@@ -2,7 +2,7 @@
 	"use strict";
 
 	var filesToInclude = [
-		'/compressed/code.js'
+		'/Compressed/Code.js'
 	];
 
 	for (var i = 0; i < filesToInclude.length; i++) {

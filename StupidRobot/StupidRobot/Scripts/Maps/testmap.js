@@ -58,7 +58,7 @@ var SOURCE_FROM_TILED_MAP_EDITOR = { "height":10,
 		    "tilesets":[
 		           {
 		            "firstgid":1,
-		            "image":"/assets/Game/Images/Maps/ground.png",
+		            "image":"/assets/Game/Images/Maps/Ground.png",
 		            "imageheight":32,
 		            "imagewidth":96,
 		            "margin":0,
@@ -73,7 +73,7 @@ var SOURCE_FROM_TILED_MAP_EDITOR = { "height":10,
 		           }, 
 		           {
 		            "firstgid":4,
-		            "image": "/assets/Game/Images/Maps/obstacles.png",
+		            "image": "/assets/Game/Images/Maps/Obstacles.png",
 		            "imageheight":416,
 		            "imagewidth":256,
 		            "margin":0,

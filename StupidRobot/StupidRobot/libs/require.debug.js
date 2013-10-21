@@ -2,26 +2,26 @@
 	"use strict";
 
 	var filesToInclude = [
-		'/js/utils/HtmlUtilities.js',
-		'/js/game.js',
-		'/js/components/animation/AnimationBase.js',
-		'/js/components/animation/FlyIn.js',
-		'/js/components/BackgroundMusicPlayer.js',
-		'/js/components/Button.js',
-		'/js/components/EditorTaskbar.js',
-		'/js/components/Grid.js',
-		'/js/components/ProgressBar.js',
-		'/js/components/TweenAnimation.js',
-		'/js/maps/testmap.js',
-		'/js/pages/imprint.js',
-		'/js/pages/settings.js',
-		'/js/scenes/AppStart.js',
-		'/js/scenes/Campaign.js',
-		'/js/scenes/Editor.js',
-		'/js/scenes/MainMenu.js',
-		'/js/utils/flyouts.js',
-		'/js/main.js',
-		'/js/utils/settings.js'
+		'/Scripts/Utils/HtmlUtilities.js',
+		'/Scripts/Game.js',
+		'/Scripts/Components/animation/AnimationBase.js',
+		'/Scripts/Components/animation/FlyIn.js',
+		'/Scripts/Components/BackgroundMusicPlayer.js',
+		'/Scripts/Components/Button.js',
+		'/Scripts/Components/EditorTaskbar.js',
+		'/Scripts/Components/Grid.js',
+		'/Scripts/Components/ProgressBar.js',
+		'/Scripts/Components/TweenAnimation.js',
+		'/Scripts/Maps/Testmap.js',
+		'/Scripts/Pages/Imprint.js',
+		'/Scripts/Pages/Settings.js',
+		'/Scripts/Scenes/AppStart.js',
+		'/Scripts/Scenes/Campaign.js',
+		'/Scripts/Scenes/Editor.js',
+		'/Scripts/Scenes/MainMenu.js',
+		'/Scripts/Utils/Flyouts.js',
+		'/Scripts/Main.js',
+		'/Scripts/Utils/Settings.js'
 	];
 	
 	for (var i = 0; i < filesToInclude.length; i++) {

@@ -14,7 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" StartPage="pages/game/game.html">
+    <Application Id="App" StartPage="Pages/Game/Game.html">
       <m2:VisualElements DisplayName="StupidRobot" Description="StupidRobot" BackgroundColor="#464646" ForegroundText="light" Square150x150Logo="assets\Store\logo.png" Square30x30Logo="assets\Store\smalllogo.png">
         <m2:DefaultTile Wide310x150Logo="assets\Store\widelogo.png">
         </m2:DefaultTile>

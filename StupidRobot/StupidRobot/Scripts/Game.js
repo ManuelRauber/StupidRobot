@@ -77,9 +77,9 @@ window.addEventListener('load', function () {
 	WinJS.UI.processAll();
 
 	//add AppBars
-	StupidRobot.Utils.append('/pages/game/game.html', 'pageBody', [
-	'/pages/appBars/editor_top.html',
-	'/pages/appBars/editor_bottom.html'
+	StupidRobot.Utils.append('/Pages/Game/Game.html', 'pageBody', [
+	'/Pages/AppBars/EditorTop.html',
+	'/Pages/AppBars/EditorBottom.html'
 	]);
 
 	StupidRobot.Game.run();
