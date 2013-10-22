@@ -4,33 +4,61 @@
 	<title>EditorTop</title>
 </head>
 <body>
+
+	<!-- new-Flyout-->
+	<div id="newFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Create a new Map}">
+		<p>	
+			<b>Name</b><br />
+			<input id="newName" type="text" />
+		</p>
+		<p>
+			<b>Map size:</b><br />
+			<form>
+				<input type="radio" id="small" name="mapsize" value="small" checked> small<br>
+				<input type="radio" id="medium" name="mapsize" value="medium"> medium<br>
+				<input type="radio" id="big" name="mapsize" value="big"> big
+			</form>
+		</p>
+		<div align="right">
+			<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'createMap',
+                    label:'createMap',
+                    icon:'placeholder',
+                    section:'selection',
+                    tooltip:'create the map'
+                    }" onclick="StupidRobot.EditorTop.doSave()"></button>
+		</div>
+	</div>
+
 	<div id="EditorManageBar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement: 'top'}">
+		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'new',
+                    label:'new',
+                    icon:'add',
+                    section:'selection',
+                    tooltip:'new map',
+										type:'flyout',
+										flyout:'newFlyout'
+                    }"></button>
 		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
                     id:'save',
                     label:'save',
                     icon:'save',
-                    section:'global',
+                    section:'selection',
                     tooltip:'save the map'
                     }" onclick="StupidRobot.EditorTop.doSave()"></button>
 		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
                     id:'load',
                     label:'load',
                     icon:'import',
-                    section:'global',
+                    section:'selection',
                     tooltip:'load the map'
-                    }"></button>
-		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
-                    id:'new',
-                    label:'new',
-                    icon:'add',
-                    section:'global',
-                    tooltip:'new map'
                     }"></button>
 		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
                     id:'share',
                     label:'share',
                     icon:'syncfolder',
-                    section:'global',
+                    section:'selection',
                     tooltip:'share with community'
                     }"></button>
 	</div>
