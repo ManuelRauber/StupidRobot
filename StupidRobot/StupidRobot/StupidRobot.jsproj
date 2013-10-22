@@ -99,6 +99,8 @@
     <Content Include="Assets\Store\WideLogo.scale-140.png" />
     <Content Include="Assets\Store\WideLogo.scale-180.png" />
     <Content Include="Assets\Store\WideLogo.scale-80.png" />
+    <None Include="Scripts\Pages\AppBars\EditorTop.js" />
+    <None Include="Scripts\Pages\AppBars\EditorBottom.js" />
     <None Include="Scripts\Pages\settings.js" />
     <None Include="Scripts\Components\TweenAnimation.js" />
     <None Include="Scripts\Components\animation\AnimationBase.js" />
