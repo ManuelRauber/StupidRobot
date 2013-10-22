@@ -5,6 +5,19 @@
 		null,
 		null,
 		{
+			doCreate: function (name, mapsize) {
+				var mapname = name.value;
+				var size;
+				for (var i = 0 ; i < mapsize.length; i++) {
+					if (mapsize[i].checked) {
+						size = mapsize[i].value;
+					}
+				}
+
+				console.log(mapname);
+				console.log(size);
+			},
+
 			doSave: function () {
 				//TODO: pass the map object to this saving code
 
