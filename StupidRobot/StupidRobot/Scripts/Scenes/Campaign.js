@@ -4,7 +4,7 @@
 	Crafty.scene(StupidRobot.Scenes.Campaign, function () {
 		Crafty.background('black');
 
-		Crafty.sprite(22, 32, '/assets/Game/Images/robot-south.scale-100.png', {
+		Crafty.sprite(20, 27, '/assets/Game/Images/robot-south.scale-100.png', {
 			Stupid: [0, 0]
 		});
 
@@ -18,10 +18,10 @@
 				}
 			});
 
-		Crafty.e('2D,DOM,Fourway,Stupid,Collision')
+		Crafty.e('2D,Canvas,Fourway,Stupid,Collision')
 			.attr({ x: 120, y: 50, z: 10 })
 			.fourway(2)
-			.collision(new Crafty.polygon([0, 0], [22, 32]))
+			.collision(new Crafty.polygon([0, 0], [20, 27]))
 			.bind('Moved', function(from) {
 				if (this.hit('obstacles')) {
 					this.attr({ x: from.x, y: from.y });
