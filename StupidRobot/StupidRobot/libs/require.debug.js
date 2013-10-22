@@ -4,7 +4,7 @@
 	var filesToInclude = [
 		'/Scripts/Utils/HtmlUtilities.js',
 		'/Scripts/Game.js',
-		'/Scripts/Components/animation/AnimationBase.js',
+		'/Scripts/Components/Animation/AnimationBase.js',
 		'/Scripts/Components/animation/FlyIn.js',
 		'/Scripts/Components/BackgroundMusicPlayer.js',
 		'/Scripts/Components/Button.js',

@@ -101,11 +101,11 @@
     <Content Include="Assets\Store\WideLogo.scale-80.png" />
     <None Include="Scripts\Pages\AppBars\EditorTop.js" />
     <None Include="Scripts\Pages\AppBars\EditorBottom.js" />
-    <None Include="Scripts\Pages\settings.js" />
+    <None Include="Scripts\Pages\Settings.js" />
     <None Include="Scripts\Components\TweenAnimation.js" />
-    <None Include="Scripts\Components\animation\AnimationBase.js" />
-    <None Include="Scripts\Components\animation\FlyIn.js" />
-    <None Include="Scripts\Pages\imprint.js" />
+    <None Include="Scripts\Components\Animation\AnimationBase.js" />
+    <None Include="Scripts\Components\Animation\FlyIn.js" />
+    <None Include="Scripts\Pages\Imprint.js" />
     <None Include="Scripts\Utils\HtmlUtilities.js" />
     <Content Include="Pages\AppBars\EditorBottom.html" />
     <Content Include="Pages\AppBars\EditorTop.html" />
