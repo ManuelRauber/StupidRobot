@@ -5,7 +5,7 @@
 		'/Scripts/Utils/HtmlUtilities.js',
 		'/Scripts/Game.js',
 		'/Scripts/Components/Animation/AnimationBase.js',
-		'/Scripts/Components/animation/FlyIn.js',
+		'/Scripts/Components/Animation/FlyIn.js',
 		'/Scripts/Components/BackgroundMusicPlayer.js',
 		'/Scripts/Components/Button.js',
 		'/Scripts/Components/EditorTaskbar.js',
