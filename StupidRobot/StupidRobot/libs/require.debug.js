@@ -8,6 +8,7 @@
 		'/Scripts/Components/Animation/FlyIn.js',
 		'/Scripts/Components/BackgroundMusicPlayer.js',
 		'/Scripts/Components/Button.js',
+		'/Scripts/Components/Editor.js',
 		'/Scripts/Components/EditorTaskbar.js',
 		'/Scripts/Components/Grid.js',
 		'/Scripts/Components/ProgressBar.js',

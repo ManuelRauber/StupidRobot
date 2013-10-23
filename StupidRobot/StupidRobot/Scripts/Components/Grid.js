@@ -12,7 +12,7 @@
 	*     so the grid is centralised. It will automatically scale the blocks on low-res screens
 	*/
 	Crafty.c('Grid', {
-		Grid: function (x1, y1, x2, y2, blocks) {
+		Grid: function(x1, y1, x2, y2, blocks) {
 			this.x1 = x1;
 			this.y1 = y1;
 			this.x2 = x2;
@@ -22,7 +22,10 @@
 			return this;
 		},
 
+		isVisible: true,
+
 		init: function () {
+			this.isVisible = true;
 			//mode 1 was chosen
 			if (this.x2 != null || this.y2 != null)
 			{
@@ -48,6 +51,10 @@
 		},
 
 		draw: function () {
+			if (!this.isVisible) {
+				return;
+			}
+
 			var ctx = Crafty.canvas.context;
 			ctx.save();
 

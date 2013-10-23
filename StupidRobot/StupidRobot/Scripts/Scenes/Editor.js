@@ -1,14 +1,15 @@
 ﻿(function() {
 	"use strict";
 
-	Crafty.scene(StupidRobot.Scenes.Editor, function() {
-		Crafty.background("url('/assets/Game/Images/Backgrounds/EditorBackground.png')");
+	Crafty.scene(StupidRobot.Scenes.Editor, function () {
+		var editor = Crafty.e('2D, Canvas, Editor');
 
-		var windowWidth = StupidRobot.Game.width;
-		var windowHeight = StupidRobot.Game.height;
+		//Crafty.background("url('/assets/Game/Images/Backgrounds/EditorBackground.png')");
 
-		Crafty.e('2D, Canvas, Grid')
-			.Grid((windowWidth / 2), (windowHeight / 2), null, null, 20);
+		WinJS.Utilities.query('#save')
+			.listen('click', function() {
+				Crafty.trigger('EntitySelected');
+			});
 
 		var manageBar = document.getElementById('EditorManageBar').winControl;
 		var editBar = document.getElementById('EditorEditBar').winControl;
