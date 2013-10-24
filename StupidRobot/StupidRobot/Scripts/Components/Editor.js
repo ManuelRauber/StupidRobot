@@ -17,19 +17,31 @@
 
 	Crafty.c('Editor', {
 		init: function() {
-			var windowWidth = StupidRobot.Game.width;
-			var windowHeight = StupidRobot.Game.height;
+			this.windowWidth = StupidRobot.Game.width;
+			this.windowHeight = StupidRobot.Game.height;
 
-			this._grid = Crafty.e('2D, Canvas, Grid')
-				.Grid((windowWidth / 2), (windowHeight / 2), null, null, 20);
-
-			this.bind('EntitySelected', this._entitySelected);
+			this.bind('CreateMap', this._createMap);
 		},
 
-		_entitySelected: function(data) {
-			this._grid.isVisible = false;
+		_createMap: function (data) {
 
+			/*
+							var mapname = name.value;
+				var size;
+				for (var i = 0 ; i < mapsize.length; i++) {
+					if (mapsize[i].checked) {
+						size = mapsize[i].value;
+					}
+				}
+
+				console.log(mapname);
+				console.log(size);
+			*/
+
+			this._grid = Crafty.e('2D, Canvas, Grid')
+				.Grid((this.windowWidth / 2), (this.windowHeight / 2), null, null, 20);
 			this.trigger('Change');
+
 		}
 	});
 

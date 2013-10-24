@@ -6,9 +6,9 @@
 
 		//Crafty.background("url('/assets/Game/Images/Backgrounds/EditorBackground.png')");
 
-		WinJS.Utilities.query('#save')
+		WinJS.Utilities.query('#createMap')
 			.listen('click', function() {
-				Crafty.trigger('EntitySelected');
+				Crafty.trigger('CreateMap');
 			});
 
 		var manageBar = document.getElementById('EditorManageBar').winControl;
