@@ -20,11 +20,28 @@
 			this.windowWidth = StupidRobot.Game.width;
 			this.windowHeight = StupidRobot.Game.height;
 
+			//Editor Top Menu Bar
 			this.bind('CreateMap', this._createMap);
+			//Editor Bottom Menu Bar
+			this.bind('EntitySelection', this._selectEntity);
+		},
+
+		_selectEntity: function (data) {
+			var entities = {
+				0: "/Assets/Game/Images/robot-east.scale-100.png",
+				1: "/Assets/Game/Images/robot-north.scale-100.png",
+				2: "/Assets/Game/Images/robot-west.scale-100.png",
+				3: "/Assets/Game/Images/robot-south.scale-100.png",
+				4: "/Assets/Game/Images/rocket.scale-100.png",
+				5: "/Assets/Game/Images/tree.scale-100.png"
+			}
+
+			//set the currentEntity picture
+			document.getElementById('currentEntity').src = entities[data.index];
 		},
 
 		_createMap: function (data) {
-			
+
 			//remove open map and its children before creating another one
 			if (typeof(this._grid) != "undefined") {
 				this._grid.each(function () {
