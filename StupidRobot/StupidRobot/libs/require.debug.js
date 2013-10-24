@@ -14,6 +14,7 @@
 		'/Scripts/Components/ProgressBar.js',
 		'/Scripts/Components/TweenAnimation.js',
 		'/Scripts/Maps/Testmap.js',
+		'/Scripts/Pages/Entities.js',
 		'/Scripts/Pages/Imprint.js',
 		'/Scripts/Pages/Settings.js',
 		'/Scripts/Scenes/AppStart.js',
