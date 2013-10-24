@@ -24,6 +24,13 @@
 		},
 
 		_createMap: function (data) {
+			
+			//remove open map and its children before creating another one
+			if (typeof(this._grid) != "undefined") {
+				this._grid.each(function () {
+					if (!this.has("Persist")) this.destroy();
+				});
+			}
 
 			//get mapname and mapsize of data
 			var mapname = data['mapname'].value;
@@ -39,7 +46,10 @@
 			console.log(size);
 
 			//create grid
-			this._grid = Crafty.e('2D, Canvas, Grid')
+			this._grid = Crafty.e();
+			this._grid.addComponent('2D');
+			this._grid.addComponent('Canvas');
+			this._grid.addComponent('Grid')
 				.Grid((this.windowWidth / 2), (this.windowHeight / 2), null, null, size);
 
 			//force the component to redraw
