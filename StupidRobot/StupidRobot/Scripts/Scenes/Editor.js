@@ -7,7 +7,8 @@
 		//Crafty.background("url('/assets/Game/Images/Backgrounds/EditorBackground.png')");
 
 		WinJS.Utilities.query('#createMap')
-			.listen('click', function() {
+			.listen('click', function () {
+				document.getElementById('newFlyout').winControl.hide();
 				Crafty.trigger('CreateMap', {
 					mapname: document.getElementById('newName'),
 					mapsize: document.getElementsByName('mapsize')
