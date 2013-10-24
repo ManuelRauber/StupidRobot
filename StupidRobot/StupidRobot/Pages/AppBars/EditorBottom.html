@@ -11,25 +11,84 @@
 		<img src="/Assets/Game/Images/tree.scale-100.png" height="30" /> <button id="space">space</button><br />
 		<img src="/Assets/Game/Images/tree.scale-100.png" height="30" /> <button id="desert">desert</button>
 	</div>
+	<!-- entities -->
+	<div id="entitiesFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Entities}">
+		<div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template">
+			<div style="width: 282px; height: 70px; padding: 5px; overflow: hidden; display: -ms-grid;">
+
+				<!-- Displays the "picture" field. -->
+				<img data-win-bind="alt: title; src: picture"
+						 src="#"
+						 style="width: 60px; height: 60px; margin: 5px; -ms-grid-column: 1;" />
+				<div style="margin: 5px; -ms-grid-column: 2">
+
+					<!-- Displays the "title" field. -->
+					<h4 data-win-bind="innerText: title"></h4>
+
+					<!-- Displays the "text" field. -->
+					<h6 data-win-bind="innerText: text"></h6>
+				</div>
+			</div>
+		</div>
+
+		<div id="basicListView" data-win-control="WinJS.UI.ListView" data-win-options="{
+				 itemDataSource : StupidRobot.Editor.Entities.dataSource,
+				 itemTemplate: select('#mediumListIconTextTemplate'),
+				 layout : {type: WinJS.UI.GridLayout}}">
+		</div>
+	</div>
 	<div id="EditorEditBar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement: 'bottom', layout: 'custom', sticky: true}">
-		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+		<table align="left">
+			<tr>
+				<td>
+				</td>
+				<td style="display:table-cell; vertical-align:middle; text-align:center">
+					<img src="/Assets/Game/Images/tree.scale-100.png" height="30" /><br />
+					current Entity
+				</td>
+				<td>
+					<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'Entities',
+                    label:'Entities',
+                    icon:'preview',
+                    tooltip:'Entities',
+										type:'flyout',
+										flyout:'entitiesFlyout'
+                    }"></button>
+				</td>
+				<td>
+					<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
                     id:'changeTheme',
                     label:'changeTheme',
                     icon:'pictures',
-                    section:'global',
+                    section:'selection',
                     tooltip:'change Theme',
 										type:'flyout',
 										flyout:'changeFlyout'
                     }"></button>
-		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
-                    id:'changeTheme',
-                    label:'changeTheme',
-                    icon:'pictures',
-                    section:'global',
-                    tooltip:'change Theme',
-										type:'flyout',
-										flyout:'changeFlyout'
+				</td>
+			</tr>
+		</table>
+		<table align="right">
+			<tr>
+				<td>
+					<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'undo',
+                    label:'undo',
+                    icon:'undo',
+                    tooltip:'undo',
                     }"></button>
+				</td>
+				<td>
+					<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+                    id:'redo',
+                    label:'redo',
+                    icon:'redo',
+                    tooltip:'redo',
+                    }"></button>
+				</td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>
