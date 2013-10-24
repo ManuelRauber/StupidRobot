@@ -16,8 +16,6 @@
 		'/Scripts/Maps/Testmap.js',
 		'/Scripts/Pages/Imprint.js',
 		'/Scripts/Pages/Settings.js',
-		'/Scripts/Pages/AppBars/EditorBottom.js',
-		'/Scripts/Pages/AppBars/EditorTop.js',
 		'/Scripts/Scenes/AppStart.js',
 		'/Scripts/Scenes/Campaign.js',
 		'/Scripts/Scenes/Editor.js',

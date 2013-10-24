@@ -101,8 +101,6 @@
     <Content Include="Assets\Store\WideLogo.scale-80.png" />
     <Content Include="Scripts\Components\Editor.js" />
     <Content Include="Scripts\Reference.js" />
-    <None Include="Scripts\Pages\AppBars\EditorTop.js" />
-    <None Include="Scripts\Pages\AppBars\EditorBottom.js" />
     <None Include="Scripts\Pages\Settings.js" />
     <None Include="Scripts\Components\TweenAnimation.js" />
     <None Include="Scripts\Components\Animation\AnimationBase.js" />

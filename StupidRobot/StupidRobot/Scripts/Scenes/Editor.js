@@ -8,7 +8,10 @@
 
 		WinJS.Utilities.query('#createMap')
 			.listen('click', function() {
-				Crafty.trigger('CreateMap');
+				Crafty.trigger('CreateMap', {
+					mapname: document.getElementById('newName'),
+					mapsize: document.getElementsByName('mapsize')
+				});
 			});
 
 		var manageBar = document.getElementById('EditorManageBar').winControl;
