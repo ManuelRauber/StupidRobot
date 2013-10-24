@@ -4,34 +4,31 @@
 	<title>EditorBottom</title>
 </head>
 <body>
+	<!-- change theme -->
+	<div id="changeFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{change Theme}">
+		<img src="/Assets/Game/Images/tree.scale-100.png" height="30"/> <button id="forest">forest</button><br />
+		<img src="/Assets/Game/Images/tree.scale-100.png" height="30" /> <button id="dungeon">dungeon</button><br />
+		<img src="/Assets/Game/Images/tree.scale-100.png" height="30" /> <button id="space">space</button><br />
+		<img src="/Assets/Game/Images/tree.scale-100.png" height="30" /> <button id="desert">desert</button>
+	</div>
 	<div id="EditorEditBar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement: 'bottom', layout: 'custom', sticky: true}">
 		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
-                    id:'save',
-                    label:'save',
-                    icon:'like',
+                    id:'changeTheme',
+                    label:'changeTheme',
+                    icon:'pictures',
                     section:'global',
-                    tooltip:'save the map'
+                    tooltip:'change Theme',
+										type:'flyout',
+										flyout:'changeFlyout'
                     }"></button>
 		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
-                    id:'load',
-                    label:'load',
-                    icon:'import',
+                    id:'changeTheme',
+                    label:'changeTheme',
+                    icon:'pictures',
                     section:'global',
-                    tooltip:'load the map'
-                    }"></button>
-		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
-                    id:'new',
-                    label:'new',
-                    icon:'add',
-                    section:'global',
-                    tooltip:'new map'
-                    }"></button>
-		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
-                    id:'share',
-                    label:'share',
-                    icon:'syncfolder',
-                    section:'global',
-                    tooltip:'share with community'
+                    tooltip:'change Theme',
+										type:'flyout',
+										flyout:'changeFlyout'
                     }"></button>
 	</div>
 </body>
