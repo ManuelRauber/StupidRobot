@@ -24,13 +24,12 @@
 
 		isVisible: true,
 
-		addEntity: function (row, column, entity) {
+		addGridItem: function (row, column) {
 			//calculate grid x and y for wanted column & row
 			var x_gridItem = this.x1 + (this.w * (row - 1));
 			var y_gridItem = this.y1 + (this.h * (column -1));
 			Crafty.e('2D, Canvas, GridItem')
-				.GridItem(x_gridItem, y_gridItem, this.w, this.h)
-				.Entity(entity);
+				.GridItem(x_gridItem, y_gridItem, this.w, this.h);
 		},
 
 		init: function () {
@@ -70,6 +69,7 @@
 			for (var j = 0; j < this.blocks; j++) {
 				for (var i = 0; i < this.blocks; i++) {
 					ctx.strokeRect(this.x1 + (this.w * i), this.y1 + (this.h * j), this.w, this.h);
+					this.addGridItem(j+1, i+1);
 				}
 			}
 

@@ -24,6 +24,7 @@
 				var entity = document.getElementById('basicListView').winControl.currentItem;
 				document.getElementById('currentEntity').src = StupidRobot.Editor.Entities.getItem(entity.index).data['picture'];
 				Crafty.trigger('EntitySelected', entity);
+				console.log(StupidRobot.Editor.SelectedEntity);
 			});
 
 		var manageBar = document.getElementById('EditorManageBar').winControl;
