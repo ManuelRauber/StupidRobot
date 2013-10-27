@@ -17,17 +17,17 @@
 			});
 
 		//Editor Bottom Menu Bar
+		//Enttiy Selection in List
 		WinJS.Utilities.query('#basicListView')
 			.listen('click', function () {
 				document.getElementById('entitiesFlyout').winControl.hide();
-				Crafty.trigger('EntitySelection',
-					document.getElementById('basicListView').winControl.currentItem);
-				});
+				var entity = document.getElementById('basicListView').winControl.currentItem;
+				document.getElementById('currentEntity').src = StupidRobot.Editor.Entities.getItem(entity.index).data['picture'];
+			});
 
 		var manageBar = document.getElementById('EditorManageBar').winControl;
 		var editBar = document.getElementById('EditorEditBar').winControl;
 		manageBar.show();
 		editBar.show();
 	});
-
 })();
