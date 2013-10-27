@@ -48,8 +48,9 @@
 
 			//create grid
 			this._grid = Crafty.e('2D, Canvas, Grid')
-				.Grid((this.windowWidth / 2), (this.windowHeight / 2), null, null, size);;
+				.Grid((this.windowWidth / 2), (this.windowHeight / 2), null, null, size);
 
+			this._grid.addEntity(2, 2);
 			//force the component to redraw
 			this.trigger('Change');
 

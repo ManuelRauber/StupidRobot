@@ -24,6 +24,13 @@
 
 		isVisible: true,
 
+		addEntity: function (row, column) {
+			//calculate grid x and y for wanted column & row
+			var x_gridItem = this.x1 + (this.w * (row - 1));
+			var y_gridItem = this.y1 + (this.h * (column -1));
+			Crafty.e('2D, Canvas, GridItem').GridItem(x_gridItem, y_gridItem, this.w, this.h);
+		},
+
 		init: function () {
 			this.isVisible = true;
 			//mode 1 was chosen

@@ -13,6 +13,7 @@
 		'/Scripts/Components/Grid.js',
 		'/Scripts/Components/ProgressBar.js',
 		'/Scripts/Components/TweenAnimation.js',
+		'/Scripts/Components/GridItem.js',
 		'/Scripts/Maps/Testmap.js',
 		'/Scripts/Pages/Entities.js',
 		'/Scripts/Pages/Imprint.js',
