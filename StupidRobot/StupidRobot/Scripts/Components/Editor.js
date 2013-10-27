@@ -19,6 +19,9 @@
 		init: function() {
 			this.windowWidth = StupidRobot.Game.width;
 			this.windowHeight = StupidRobot.Game.height;
+
+			//Editor Top Menu Bar
+			this.bind('CreateMap', this._createMap);
 		},
 
 		_createMap: function (data) {
