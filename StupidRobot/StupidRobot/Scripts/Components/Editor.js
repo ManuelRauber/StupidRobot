@@ -20,8 +20,10 @@
 			this.windowWidth = StupidRobot.Game.width;
 			this.windowHeight = StupidRobot.Game.height;
 
-			//Editor Top Menu Bar
+			//Map Creation
 			this.bind('CreateMap', this._createMap);
+			//Entity Selection
+			this.bind('EntitySelected', this._entitySelected);
 		},
 
 		_createMap: function (data) {
@@ -50,11 +52,16 @@
 			this._grid = Crafty.e('2D, Canvas, Grid')
 				.Grid((this.windowWidth / 2), (this.windowHeight / 2), null, null, size);
 
-			this._grid.addEntity(2, 2);
+			this._grid.addEntity(2, 2, this.selectedEntity);
 			//force the component to redraw
 			this.trigger('Change');
 
+		},
+
+		_entitySelected: function (entity) {
+			this.selectedEntity = entity;
 		}
+
 	});
 
 	WinJS.Namespace.define('StupidRobot.Editor', {

@@ -23,6 +23,7 @@
 				document.getElementById('entitiesFlyout').winControl.hide();
 				var entity = document.getElementById('basicListView').winControl.currentItem;
 				document.getElementById('currentEntity').src = StupidRobot.Editor.Entities.getItem(entity.index).data['picture'];
+				Crafty.trigger('EntitySelected', entity);
 			});
 
 		var manageBar = document.getElementById('EditorManageBar').winControl;
