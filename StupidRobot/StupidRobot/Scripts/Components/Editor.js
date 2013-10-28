@@ -59,10 +59,10 @@
 			var wall = StupidRobot.Editor.Entities.getItem(5);
 			//create surrounding walls
 			for (var i = 1; i <= blocks; i++) {
-				this._grid.addGridItem(i, 1, wall);
-				this._grid.addGridItem(1, i, wall);
-				this._grid.addGridItem(i, blocks, wall);
-				this._grid.addGridItem(blocks, i, wall);
+				this._grid.addGridItem(i, 1, wall, false);
+				this._grid.addGridItem(1, i, wall, false);
+				this._grid.addGridItem(i, blocks, wall, false);
+				this._grid.addGridItem(blocks, i, wall, false);
 			}
 		}
 	});

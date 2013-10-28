@@ -2,11 +2,12 @@
 	"use strict";
 
 	Crafty.c('GridItem', {
-		GridItem: function(x, y, w, h, entity) {
+		GridItem: function(x, y, w, h, entity, clickable) {
 			this.x = x;
 			this.y = y;
 			this.w = w;
 			this.h = h;
+			if (clickable == false) this.unbind('Click');
 			if (typeof (entity) != "undefined") { this.setEntity(entity); }
 			this.bind('EntitySelected', function (selectedEntity) { this.selectedEntity = selectedEntity });
 			this.draw();
