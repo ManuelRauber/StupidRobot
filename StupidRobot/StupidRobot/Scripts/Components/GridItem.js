@@ -7,10 +7,10 @@
 			this.y = y;
 			this.w = w;
 			this.h = h;
-			if (clickable == false) this.unbind('Click');
 			if (typeof (entity) != "undefined") { this.setEntity(entity); }
+			if (clickable == false) this.unbind('Click');
+			//let this gridItem know, which current entity is selected to place
 			this.bind('EntitySelected', function (selectedEntity) { this.selectedEntity = selectedEntity });
-			this.draw();
 			return this;
 		},
 
