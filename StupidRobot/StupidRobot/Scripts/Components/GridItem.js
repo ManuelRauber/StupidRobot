@@ -7,6 +7,7 @@
 			this.y = y;
 			this.w = w;
 			this.h = h;
+			if (typeof (entity) != "undefined") { this.setEntity(entity); }
 			this.bind('EntitySelected', function (selectedEntity) { this.selectedEntity = selectedEntity });
 			this.draw();
 			return this;
@@ -14,7 +15,7 @@
 
 		setEntity: function (entity) {
 			this.image = new Image;
-			this.image.src = StupidRobot.Editor.Entities.getItem(entity.index).data['picture'];
+			this.image.src = entity.data['picture'];
 			//TODO Entity properties
 			this.trigger('Change');
 		},

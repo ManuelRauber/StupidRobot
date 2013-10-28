@@ -43,17 +43,28 @@
 				}
 			}
 
-			console.log(mapname);
-			console.log(size);
-
 			//create grid
 			this._grid = Crafty.e('2D, Canvas, Grid')
 				.Grid((this.windowWidth / 2), (this.windowHeight / 2), null, null, size);
 
+			//create theme entities structure
+			this._createMapThemeEntities();
+
 			//force the component to redraw
 			this.trigger('Change');
-
 		},
+
+		_createMapThemeEntities: function () {
+			var blocks = this._grid.blocks;
+			var wall = StupidRobot.Editor.Entities.getItem(5);
+			//create surrounding walls
+			for (var i = 1; i <= blocks; i++) {
+				this._grid.addGridItem(i, 1, wall);
+				this._grid.addGridItem(1, i, wall);
+				this._grid.addGridItem(i, blocks, wall);
+				this._grid.addGridItem(blocks, i, wall);
+			}
+		}
 	});
 
 	WinJS.Namespace.define('StupidRobot.Editor', {

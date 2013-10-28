@@ -25,7 +25,7 @@
 
 		isVisible: true,
 
-		addGridItem: function (row, column) {
+		addGridItem: function (row, column, entity) {
 			//calculate grid x and y for wanted column & row
 			var x_gridItem = this.x1 + (this.w * (row - 1));
 			var y_gridItem = this.y1 + (this.h * (column -1));
@@ -42,7 +42,7 @@
 			//create new Entity
 			this.gridItemList.push({"row": row, "column": column, 'entity': 
 				Crafty.e('2D, Canvas, GridItem')
-						.GridItem(x_gridItem, y_gridItem, this.w, this.h)});
+						.GridItem(x_gridItem, y_gridItem, this.w, this.h, entity)});
 		},
 
 		init: function () {
@@ -69,6 +69,12 @@
 				this.x1 = this.x1 - (this.w * (this.blocks / 2));
 				this.y1 = this.y1 - (this.h * (this.blocks / 2));
 			}
+			//fill the grid with empty entities
+			for (var i = 1; i <= this.blocks; i++) {
+				for (var j = 1; j <= this.blocks ; j++) {
+					this.addGridItem(j, i);
+				}
+			}
 		},
 
 		draw: function () {
@@ -82,7 +88,6 @@
 			for (var j = 0; j < this.blocks; j++) {
 				for (var i = 0; i < this.blocks; i++) {
 					ctx.strokeRect(this.x1 + (this.w * i), this.y1 + (this.h * j), this.w, this.h);
-					this.addGridItem(j+1, i+1);
 				}
 			}
 
