@@ -18,6 +18,7 @@
 			this.x2 = x2;
 			this.y2 = y2;
 			this.blocks = blocks;
+			this.gridItemList = [];
 			this.init();
 			return this;
 		},
@@ -28,8 +29,20 @@
 			//calculate grid x and y for wanted column & row
 			var x_gridItem = this.x1 + (this.w * (row - 1));
 			var y_gridItem = this.y1 + (this.h * (column -1));
-			Crafty.e('2D, Canvas, GridItem')
-				.GridItem(x_gridItem, y_gridItem, this.w, this.h);
+
+			//check if a entity already exists, delete it then
+			for (var i = 0; i < this.gridItemList.length; i++) {
+				if (this.gridItemList[i]['row'] == row && this.gridItemList[i]['column'] == column) {
+					this.gridItemList[i]['entity'].each(function () {
+						if (!this.has("Persist")) this.destroy();
+					});					
+				}
+			}
+			
+			//create new Entity
+			this.gridItemList.push({"row": row, "column": column, 'entity': 
+				Crafty.e('2D, Canvas, GridItem')
+						.GridItem(x_gridItem, y_gridItem, this.w, this.h)});
 		},
 
 		init: function () {

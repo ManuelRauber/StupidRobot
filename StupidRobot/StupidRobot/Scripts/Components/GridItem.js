@@ -60,6 +60,9 @@
 				ctx.fillText("no Image", this.x + (this.w / 2), this.y + this.h / 2 + 13);
 			}
 
+			//TODO: Next Line could be a chooseable option for activating gridview or not
+			ctx.strokeRect(this.x, this.y, this.w, this.h);
+
 			ctx.restore();
 		}
 	});
