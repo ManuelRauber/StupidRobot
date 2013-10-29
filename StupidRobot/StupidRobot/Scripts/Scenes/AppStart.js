@@ -15,14 +15,16 @@
 		Crafty.e('2D,Canvas,ProgressBar')
 			.ProgressBar();
 
-		Crafty.load([
-				'/assets/Game/Images/robot-east.scale-100.png',
-				'/assets/Game/Images/robot-north.scale-100.png',
-				'/assets/Game/Images/robot-south.scale-100.png',
-				'/assets/Game/Images/robot-west.scale-100.png',
-				'/assets/Game/Images/rocket.scale-100.png',
-				'/assets/Game/Images/tree.scale-100.png'
-			],
+
+		var loadArray = [];
+		StupidRobot.Editor.AllAssets['forest'].forEach(function (entity) {
+			loadArray.push(entity['picture']);
+		});
+		StupidRobot.Editor.AllAssets['dungeon'].forEach(function (entity) {
+			loadArray.push(entity['picture']);
+		});
+
+		Crafty.load(loadArray,
 			//on load finish
 			function() {
 				Crafty.scene(StupidRobot.Scenes.MainMenu);

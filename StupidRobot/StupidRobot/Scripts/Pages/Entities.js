@@ -27,7 +27,14 @@
 					{ title: "Tree", text: "a nice tree", theme: "grass", picture: "/Assets/Game/Images/tree.scale-100.png" }
 				];
 				var dataArray = themes[theme];
+				this.themes = themes;
 				this.itemList = new WinJS.Binding.List(dataArray);
+			},
+
+			AllAssets: {
+				get: function () {
+					return this.themes;
+				}
 			},
 
 			Entities: {
@@ -49,6 +56,11 @@
 			get: function () {
 				return entities.Entities;
 			}
-		}
+		},
+		AllAssets: {
+			get: function () {
+				return entities.AllAssets;
+			}
+		},
 	});
 })();

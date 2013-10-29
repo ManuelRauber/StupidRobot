@@ -157,6 +157,9 @@
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Game\Images\Entities\" />
+  </ItemGroup>
   <Target Name="TransformRequireJs">
     <Copy SourceFiles="Libs\require.debug.js" DestinationFiles="Libs\require.js" Condition="'$(Configuration)'!='Release'" />
     <Copy SourceFiles="Libs\require.release.js" DestinationFiles="Libs\require.js" Condition="'$(Configuration)'=='Release'" />
