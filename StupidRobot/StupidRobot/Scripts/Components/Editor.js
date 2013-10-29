@@ -56,7 +56,7 @@
 
 		_createMapThemeEntities: function () {
 			var blocks = this._grid.blocks;
-			var wall = StupidRobot.Editor.GetEntity('Tree');
+			var wall = StupidRobot.Editor.GetEntity('solid[0]');
 			
 			//create surrounding walls
 			for (var i = 1; i <= blocks; i++) {

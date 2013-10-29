@@ -11,26 +11,16 @@
 			loadEntities: function (theme) {
 				var themes = [];
 				themes['forest'] = [
-					{ title: "Robot", text: "east", theme: "grass", picture: "/Assets/Game/Images/robot-east.scale-100.png" },
-					{ title: "Robot", text: "north", theme: "grass", picture: "/Assets/Game/Images/robot-north.scale-100.png" },
-					{ title: "Robot", text: "west", theme: "grass", picture: "/Assets/Game/Images/robot-west.scale-100.png" },
-					{ title: "Robot", text: "south", theme: "grass", picture: "/Assets/Game/Images/robot-south.scale-100.png" },
-					{ title: "Rocket", text: "yipiiii", theme: "grass", picture: "/Assets/Game/Images/rocket.scale-100.png" },
-					{ title: "Tree", text: "a nice tree", theme: "grass", picture: "/Assets/Game/Images/tree.scale-100.png" }
-				];
-				themes['dungeon'] = [
-					{ title: "Robot", text: "east", theme: "grass", picture: "/Assets/Game/Images/robot-east.scale-100.png" },
-					{ title: "Robot", text: "north", theme: "grass", picture: "/Assets/Game/Images/robot-north.scale-100.png" },
-					{ title: "Robot", text: "west", theme: "grass", picture: "/Assets/Game/Images/robot-west.scale-100.png" },
-					{ title: "Robot", text: "south", theme: "grass", picture: "/Assets/Game/Images/robot-south.scale-100.png" },
-					{ title: "Rocket", text: "yipiiii", theme: "grass", picture: "/Assets/Game/Images/rocket.scale-100.png" },
-					{ title: "Tree", text: "a nice tree", theme: "grass", picture: "/Assets/Game/Images/tree.scale-100.png" }
+					{ type: "solid[0]", title: "Tree", text: "a nice tree", picture: "/Assets/Game/Images/tree.scale-100.png" },
+					{ type: "solid[1]", title: "Rocket", text: "yipiiii", picture: "/Assets/Game/Images/rocket.scale-100.png" },
+					{ type: "solid[2]", title: "Robot", text: "south", picture: "/Assets/Game/Images/robot-south.scale-100.png" },
+					{ type: "free[0]", title: "Robot", text: "west", picture: "/Assets/Game/Images/robot-west.scale-100.png" },
 				];
 				themes['desert'] = [
-					{ title: "bush", text: "a normal bush", theme: "grass", picture: "/Assets/Game/Images/Entities/desert_bush.png" },
-					{ title: "ground", text: "ground", theme: "grass", picture: "/Assets/Game/Images/desert_ground.png" },
-					{ title: "rock", text: "solid rock", theme: "grass", picture: "/Assets/Game/Images/desert_rock.png" },
-					{ title: "wall", text: "brick wall", theme: "grass", picture: "/Assets/Game/Images/desert_wall.png" },
+					{ type: "solid[0]", title: "wall", text: "brick wall", picture: "/Assets/Game/Images/desert_wall.png" },
+					{ type: "solid[1]", title: "rock", text: "solid rock", picture: "/Assets/Game/Images/desert_rock.png" },
+					{ type: "solid[2]", title: "bush", text: "a normal bush", picture: "/Assets/Game/Images/Entities/desert_bush.png" },
+					{ type: "free[0]", title: "ground", text: "ground", picture: "/Assets/Game/Images/desert_ground.png" },
 				];
 				var dataArray = themes[theme];
 				this.themes = themes;
@@ -38,9 +28,9 @@
 			},
 		
 			//get entity from itemList
-			getEntity: function (title) {
+			getEntity: function (type) {
 				for (var i = 0 ; i < this.itemList.length ; i++) {
-					if (this.itemList.getItem(i).data['title'] == title)
+					if (this.itemList.getItem(i).data['type'] == type)
 						return this.itemList.getItem(i);
 				}
 				return undefined;

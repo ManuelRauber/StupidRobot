@@ -24,31 +24,36 @@
 				var entity = document.getElementById('basicListView').winControl.currentItem;
 				document.getElementById('currentEntity').src = StupidRobot.Editor.LoadedEntities.getItem(entity.index).data['picture'];
 				Crafty.trigger('EntitySelected', StupidRobot.Editor.LoadedEntities.getItem(entity.index));
-				console.log(StupidRobot.Editor.SelectedEntity);
 			});
 
 		WinJS.Utilities.query('#forest')
 			.listen('click', function () {
-			document.getElementById('changeFlyout').winControl.hide();
-			Crafty.trigger('ThemeChange', 'forest');
+				document.getElementById('changeFlyout').winControl.hide();
+				Crafty.trigger('ThemeChange', 'forest');
+				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 		});
 		WinJS.Utilities.query('#dungeon')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
 				Crafty.trigger('ThemeChange', 'dungeon');
+				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});
 		WinJS.Utilities.query('#space')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
 				Crafty.trigger('ThemeChange', 'space');
+				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});
 		WinJS.Utilities.query('#desert')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
 				Crafty.trigger('ThemeChange', 'desert');
+				document.getElementById('basicListView').winControl;
+
+				//console.log(document.getElementById('basicListView').itemDataSource);
+				//document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});
 		
-
 		var manageBar = document.getElementById('EditorManageBar').winControl;
 		var editBar = document.getElementById('EditorEditBar').winControl;
 		manageBar.show();
