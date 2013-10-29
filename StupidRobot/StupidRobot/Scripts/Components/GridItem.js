@@ -64,10 +64,11 @@
 				ctx.fillStyle = 'black';
 				ctx.font = "10px Arial";
 				ctx.textAlign = 'center';
-				ctx.fillText("no Image", this.x + (this.w / 2), this.y + this.h / 2 + 13);
+				ctx.fillText("no Entity", this.x + (this.w / 2), this.y + this.h / 2 + 13);
 			}
 
 			//TODO: Next Line could be a chooseable option for activating gridview or not
+			//restore gridlines or else the picture would overpaint it
 			ctx.strokeRect(this.x, this.y, this.w, this.h);
 
 			ctx.restore();

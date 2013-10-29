@@ -89,6 +89,7 @@
 			var ctx = Crafty.canvas.context;
 			ctx.save();
 
+			//create gridlines
 			for (var j = 0; j < this.blocks; j++) {
 				for (var i = 0; i < this.blocks; i++) {
 					ctx.strokeRect(this.x1 + (this.w * i), this.y1 + (this.h * j), this.w, this.h);

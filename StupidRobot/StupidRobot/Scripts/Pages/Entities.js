@@ -5,6 +5,7 @@
 		null,
 		{
 			init: function () {
+				//load theme forest as standard
 				this.loadEntities('forest');
 			},
 
@@ -33,7 +34,7 @@
 				this.itemList = new WinJS.Binding.List(dataArray);
 			},
 		
-			//get entity from itemList
+			//get entity by its type from the current itemList
 			getEntity: function (type) {
 				for (var i = 0 ; i < this.itemList.length ; i++) {
 					if (this.itemList.getItem(i).data['type'] == type)
@@ -47,14 +48,14 @@
 				this.loadEntities(theme);
 			},
 
-			//all assets from all themes
+			//return all assets from all themes (used for loading the assets at app-start)
 			AllAssets: {
 				get: function () {
 					return this.themes;
 				}
 			},
 
-			//itemList, with the assets from the specific theme
+			//return the current theme itemList
 			LoadedEntities: {
 				get: function () {
 					return this.itemList;
@@ -63,11 +64,11 @@
 		}
 	);
 
-	//load list of entities
+	//load the entities
 	var entities = new entitiesClass();
 	entities.init();
 
-	//make it public
+	//public VIP access
 	WinJS.Namespace.define("StupidRobot.Editor", {
 		LoadedEntities: {
 			get: function () {
