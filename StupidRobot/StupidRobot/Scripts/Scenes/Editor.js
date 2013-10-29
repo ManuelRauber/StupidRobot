@@ -27,26 +27,25 @@
 				console.log(StupidRobot.Editor.SelectedEntity);
 			});
 
-		//Theme Change
 		WinJS.Utilities.query('#forest')
 			.listen('click', function () {
 			document.getElementById('changeFlyout').winControl.hide();
-			Crafty.trigger('ThemeChange', document.getElementsByName('forest'));
+			Crafty.trigger('ThemeChange', 'forest');
 		});
 		WinJS.Utilities.query('#dungeon')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
-				Crafty.trigger('ThemeChange', document.getElementsByName('dungeon'));
+				Crafty.trigger('ThemeChange', 'dungeon');
 			});
 		WinJS.Utilities.query('#space')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
-				Crafty.trigger('ThemeChange', document.getElementsByName('space'));
+				Crafty.trigger('ThemeChange', 'space');
 			});
 		WinJS.Utilities.query('#desert')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
-				Crafty.trigger('ThemeChange', document.getElementsByName('desert'));
+				Crafty.trigger('ThemeChange', 'desert');
 			});
 		
 
