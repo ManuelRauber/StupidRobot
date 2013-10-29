@@ -47,9 +47,9 @@
 		WinJS.Utilities.query('#desert')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
+				StupidRobot.Editor.ChangeTheme('desert');
 				Crafty.trigger('ThemeChange', 'desert');
-				document.getElementById('basicListView').winControl;
-
+				//document.getElementById('basicListView').winControl;
 				//console.log(document.getElementById('basicListView').itemDataSource);
 				//document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});

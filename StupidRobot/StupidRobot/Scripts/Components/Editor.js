@@ -56,14 +56,13 @@
 
 		_createMapThemeEntities: function () {
 			var blocks = this._grid.blocks;
-			var wall = StupidRobot.Editor.GetEntity('solid[0]');
 			
 			//create surrounding walls
 			for (var i = 1; i <= blocks; i++) {
-				this._grid.addGridItem(i, 1, wall, false);
-				this._grid.addGridItem(1, i, wall, false);
-				this._grid.addGridItem(i, blocks, wall, false);
-				this._grid.addGridItem(blocks, i, wall, false);
+				this._grid.addGridItem(i, 1, 'solid[0]', false);
+				this._grid.addGridItem(1, i, 'solid[0]', false);
+				this._grid.addGridItem(i, blocks, 'solid[0]', false);
+				this._grid.addGridItem(blocks, i, 'solid[0]', false);
 			}
 		}
 	});

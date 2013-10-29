@@ -17,10 +17,10 @@
 					{ type: "free[0]", title: "Robot", text: "west", picture: "/Assets/Game/Images/robot-west.scale-100.png" },
 				];
 				themes['desert'] = [
-					{ type: "solid[0]", title: "wall", text: "brick wall", picture: "/Assets/Game/Images/desert_wall.png" },
-					{ type: "solid[1]", title: "rock", text: "solid rock", picture: "/Assets/Game/Images/desert_rock.png" },
+					{ type: "solid[0]", title: "wall", text: "brick wall", picture: "/Assets/Game/Images/Entities/desert_wall.png" },
+					{ type: "solid[1]", title: "rock", text: "solid rock", picture: "/Assets/Game/Images/Entities/desert_rock.png" },
 					{ type: "solid[2]", title: "bush", text: "a normal bush", picture: "/Assets/Game/Images/Entities/desert_bush.png" },
-					{ type: "free[0]", title: "ground", text: "ground", picture: "/Assets/Game/Images/desert_ground.png" },
+					{ type: "free[0]", title: "ground", text: "ground", picture: "/Assets/Game/Images/Entities/desert_ground.png" },
 				];
 				var dataArray = themes[theme];
 				this.themes = themes;
@@ -36,6 +36,11 @@
 				return undefined;
 			},
 
+			//change the theme
+			changeTheme: function (theme) {
+				this.loadEntities(theme);
+			},
+
 			//all assets from all themes
 			AllAssets: {
 				get: function () {
@@ -48,7 +53,7 @@
 				get: function () {
 					return this.itemList;
 				}
-			}
+			},
 		}
 	);
 
@@ -70,7 +75,10 @@
 			}
 		},
 		GetEntity: function (title) {
-				return entities.getEntity(title);
+			return entities.getEntity(title);
+		},
+		ChangeTheme: function (theme) {
+			entities.changeTheme(theme);
 		}
 	});
 })();

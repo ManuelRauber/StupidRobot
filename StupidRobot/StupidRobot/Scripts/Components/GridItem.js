@@ -2,21 +2,23 @@
 	"use strict";
 
 	Crafty.c('GridItem', {
-		GridItem: function(x, y, w, h, entity, clickable) {
+		GridItem: function(x, y, w, h, entityType, clickable) {
 			this.x = x;
 			this.y = y;
 			this.w = w;
 			this.h = h;
-			if (typeof (entity) != "undefined") { this.setEntity(entity); }
+			this.entityType = entityType;
 			if (clickable == false) this.unbind('Click');
 			//let this gridItem know, which current entity is selected to place
 			this.bind('EntitySelected', function (selectedEntity) { this.selectedEntity = selectedEntity });
+			this.bind('ThemeChange', function () { this.setEntity(StupidRobot.Editor.GetEntity(this.entityType)) });
+			this.setEntity(StupidRobot.Editor.GetEntity(entityType));
 			return this;
 		},
 
 		setEntity: function (entity) {
-			this.image = new Image;
-			this.image.src = entity.data['picture'];
+			//update the intern entity var
+			this.entity = entity;
 			//TODO Entity properties
 			this.trigger('Change');
 		},
@@ -51,11 +53,14 @@
 
 			ctx.globalAlpha = this.isHovering ? 0.4 : 1;
 
-			if (typeof (this.image) != "undefined") {
+			//check if this gridItem has an entity
+			if (typeof (this.entity) != "undefined") {
+				this.image = new Image;
+				this.image.src = this.entity.data['picture'];
+				//console.log(this.entity.data['picture']);
 				ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
 			}
-			else
-			{
+			else {
 				ctx.fillStyle = 'black';
 				ctx.font = "10px Arial";
 				ctx.textAlign = 'center';
