@@ -22,6 +22,12 @@
 					{ type: "solid[2]", title: "bush", text: "a normal bush", picture: "/Assets/Game/Images/Entities/desert_bush.png" },
 					{ type: "free[0]", title: "ground", text: "ground", picture: "/Assets/Game/Images/Entities/desert_ground.png" },
 				];
+				themes['dungeon'] = [
+					{ type: "solid[0]", title: "wall", text: "dungeon wall", picture: "/Assets/Game/Images/Entities/dungeon_wall.png" },
+					{ type: "solid[1]", title: "hole", text: "huge hole", picture: "/Assets/Game/Images/Entities/dungeon_hole.png" },
+					{ type: "solid[2]", title: "pipe", text: "super mario?", picture: "/Assets/Game/Images/Entities/dungeon_pipe.png" },
+					{ type: "free[0]", title: "ground", text: "dungeon floor", picture: "/Assets/Game/Images/Entities/dungeon_ground.png" },
+				];
 				var dataArray = themes[theme];
 				this.themes = themes;
 				this.itemList = new WinJS.Binding.List(dataArray);
@@ -60,7 +66,6 @@
 	//load list of entities
 	var entities = new entitiesClass();
 	entities.init();
-	Crafty.bind('ThemeChange',  function (data) { entities.loadEntities(data) });
 
 	//make it public
 	WinJS.Namespace.define("StupidRobot.Editor", {

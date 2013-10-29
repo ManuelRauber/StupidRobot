@@ -60,6 +60,10 @@
     <Content Include="Assets\Game\Images\Entities\desert_ground.png" />
     <Content Include="Assets\Game\Images\Entities\desert_rock.png" />
     <Content Include="Assets\Game\Images\Entities\desert_wall.png" />
+    <Content Include="Assets\Game\Images\Entities\dungeon_ground.png" />
+    <Content Include="Assets\Game\Images\Entities\dungeon_hole.png" />
+    <Content Include="Assets\Game\Images\Entities\dungeon_pipe.png" />
+    <Content Include="Assets\Game\Images\Entities\dungeon_wall.png" />
     <Content Include="Assets\Game\Images\Maps\Ground.png" />
     <Content Include="Assets\Game\Images\Maps\Obstacles.png" />
     <Content Include="Assets\Game\Images\Maps\Ogre.png" />

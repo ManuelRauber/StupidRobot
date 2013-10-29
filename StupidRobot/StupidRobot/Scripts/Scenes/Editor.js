@@ -29,18 +29,21 @@
 		WinJS.Utilities.query('#forest')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
+				StupidRobot.Editor.ChangeTheme('forest');
 				Crafty.trigger('ThemeChange', 'forest');
 				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 		});
 		WinJS.Utilities.query('#dungeon')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
+				StupidRobot.Editor.ChangeTheme('dungeon');
 				Crafty.trigger('ThemeChange', 'dungeon');
 				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});
 		WinJS.Utilities.query('#space')
 			.listen('click', function () {
 				document.getElementById('changeFlyout').winControl.hide();
+				StupidRobot.Editor.ChangeTheme('space')
 				Crafty.trigger('ThemeChange', 'space');
 				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});

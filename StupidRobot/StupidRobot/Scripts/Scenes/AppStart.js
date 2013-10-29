@@ -23,6 +23,9 @@
 		StupidRobot.Editor.AllAssets['desert'].forEach(function (entity) {
 			loadArray.push(entity['picture']);
 		});
+		StupidRobot.Editor.AllAssets['dungeon'].forEach(function (entity) {
+			loadArray.push(entity['picture']);
+		});
 
 		Crafty.load(loadArray,
 			//on load finish
