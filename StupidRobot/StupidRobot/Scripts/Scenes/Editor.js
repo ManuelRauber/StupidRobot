@@ -26,37 +26,17 @@
 				Crafty.trigger('EntitySelected', StupidRobot.Editor.LoadedEntities.getItem(entity.index));
 			});
 
-		WinJS.Utilities.query('#forest')
-			.listen('click', function () {
+		//Change Theme Buttons
+		WinJS.Utilities.query('.themeButtons')
+			.listen('click', function (e) {
 				document.getElementById('changeFlyout').winControl.hide();
-				StupidRobot.Editor.ChangeTheme('forest');
-				Crafty.trigger('ThemeChange', 'forest');
-				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
-		});
-		WinJS.Utilities.query('#dungeon')
-			.listen('click', function () {
-				document.getElementById('changeFlyout').winControl.hide();
-				StupidRobot.Editor.ChangeTheme('dungeon');
-				Crafty.trigger('ThemeChange', 'dungeon');
-				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
-			});
-		WinJS.Utilities.query('#space')
-			.listen('click', function () {
-				document.getElementById('changeFlyout').winControl.hide();
-				StupidRobot.Editor.ChangeTheme('space')
-				Crafty.trigger('ThemeChange', 'space');
-				document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
-			});
-		WinJS.Utilities.query('#desert')
-			.listen('click', function () {
-				document.getElementById('changeFlyout').winControl.hide();
-				StupidRobot.Editor.ChangeTheme('desert');
-				Crafty.trigger('ThemeChange', 'desert');
-				//document.getElementById('basicListView').winControl;
-				//console.log(document.getElementById('basicListView').itemDataSource);
-				//document.getElementById('basicListView').itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
+				StupidRobot.Editor.ChangeTheme(e.target.title);
+				Crafty.trigger('ThemeChange', e.target.title);
+				var listview = document.getElementById('basicListView').winControl;
+				listview.itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});
 		
+	
 		var manageBar = document.getElementById('EditorManageBar').winControl;
 		var editBar = document.getElementById('EditorEditBar').winControl;
 		manageBar.show();
