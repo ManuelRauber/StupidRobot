@@ -49,9 +49,6 @@
 
 			//create theme entities structure
 			this._createMapThemeEntities();
-
-			//force the component to redraw
-			this.trigger('Change');
 		},
 
 		_createMapThemeEntities: function () {

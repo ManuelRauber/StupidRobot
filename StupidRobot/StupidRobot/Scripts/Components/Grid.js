@@ -25,6 +25,10 @@
 
 		isVisible: true,
 
+		getGrid: function () {
+			return this.gridItemList;
+		},
+
 		addGridItem: function (row, column, entityType, clickable) {
 			//calculate grid x and y for wanted column & row
 			var x_gridItem = this.x1 + (this.w * (row - 1));
