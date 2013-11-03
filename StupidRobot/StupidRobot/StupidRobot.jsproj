@@ -57,7 +57,7 @@
     </AppxManifest>
     <Content Include="Assets\Game\Images\Backgrounds\EditorBackground.png" />
     <Content Include="Assets\Game\Images\Entities\Characters\stupid.png" />
-    <Content Include="Assets\Game\Images\Entities\Items\rocket.scale-100.png" />
+    <Content Include="Assets\Game\Images\Entities\Items\rocket.png" />
     <Content Include="Assets\Game\Images\Entities\Landscape\Desert\desert_bush.png" />
     <Content Include="Assets\Game\Images\Entities\Landscape\Desert\desert_ground.png" />
     <Content Include="Assets\Game\Images\Entities\Landscape\Desert\desert_rock.png" />

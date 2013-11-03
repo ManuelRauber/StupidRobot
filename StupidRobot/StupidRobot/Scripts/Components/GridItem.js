@@ -19,6 +19,8 @@
 		setEntity: function (entity) {
 			//update the intern entity var
 			this.entity = entity;
+			//update the entitytype of this griditem
+			this.entityType = entity.data['type'];
 			//TODO Entity properties
 			this.trigger('Change');
 		},

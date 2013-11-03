@@ -10,10 +10,10 @@
 			},
 
 			loadEntities: function (theme) {
+				//declare each theme
 				var themes = [];
 				themes['forest'] = [
-					{ type: "solid[0]", title: "Tree", text: "a nice tree", picture: "/Assets/Game/Images/Entities/Landscape/Forest/forest_wall.png" },
-					
+					{ type: "solid[0]", title: "Tree", text: "a nice tree", picture: "/Assets/Game/Images/Entities/Landscape/Forest/forest_wall.png" },	
 				];
 				themes['desert'] = [
 					{ type: "solid[0]", title: "wall", text: "brick wall", picture: "/Assets/Game/Images/Entities/Landscape/Desert/desert_wall.png" },
@@ -27,8 +27,17 @@
 					{ type: "solid[2]", title: "pipe", text: "super mario?", picture: "/Assets/Game/Images/Entities/Landscape/Dungeon/dungeon_pipe.png" },
 					{ type: "free[0]", title: "ground", text: "dungeon floor", picture: "/Assets/Game/Images/Entities/Landscape/Dungeon/dungeon_ground.png" },
 				];
-				var dataArray = themes[theme];
+				//declare characters and items which exists on all themes
+				var charsAndItems = [
+					{ type: "hero[0]", title: "stupid", text: "our hero", picture: "/Assets/Game/Images/Entities/Characters/stupid.png" },
+					{ type: "item[0]", title: "rocket", text: "final rocket", picture: "/Assets/Game/Images/Entities/Items/rocket.png" }
+				];
+
+				//combine themes array and charsAndItems array into dataArray
+				var dataArray = themes[theme].concat(charsAndItems);
+				//make the themes array public for allAssets return method
 				this.themes = themes;
+				//create a new WinJS List of the dataArray
 				this.itemList = new WinJS.Binding.List(dataArray);
 			},
 		
@@ -66,7 +75,7 @@
 	var entities = new entitiesClass();
 	entities.init();
 
-	//public VIP access
+	//public access
 	WinJS.Namespace.define("StupidRobot.Editor", {
 		LoadedEntities: {
 			get: function () {
