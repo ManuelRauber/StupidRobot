@@ -27,7 +27,7 @@
 					{ type: "solid[2]", title: "pipe", text: "super mario?", picture: "/Assets/Game/Images/Entities/Landscape/Dungeon/dungeon_pipe.png" },
 					{ type: "free[0]", title: "ground", text: "dungeon floor", picture: "/Assets/Game/Images/Entities/Landscape/Dungeon/dungeon_ground.png" },
 				];
-				//declare characters and items which exists on all themes
+				//declare characters and items which exists on all themes. They can be set OVER all theme-entities of type free
 				var charsAndItems = [
 					{ type: "hero[0]", title: "stupid", text: "our hero", picture: "/Assets/Game/Images/Entities/Characters/stupid.png" },
 					{ type: "item[0]", title: "rocket", text: "final rocket", picture: "/Assets/Game/Images/Entities/Items/rocket.png" }

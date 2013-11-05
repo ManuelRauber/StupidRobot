@@ -17,6 +17,13 @@
 		},
 
 		setEntity: function (entity) {
+			if ((entity.data['type'].substring(0,4) == 'hero') ||
+						(entity.data['type'].substring(0,4) == 'item'))
+			{
+				this.overlappingEntity = entity;
+				this.trigger('Change');
+				return;
+			}
 			//update the intern entity var
 			this.entity = entity;
 			//update the entitytype of this griditem
@@ -55,12 +62,15 @@
 
 			ctx.globalAlpha = this.isHovering ? 0.4 : 1;
 
-			//check if this gridItem has an entity
 			if (typeof (this.entity) != "undefined") {
-				this.image = new Image;
-				this.image.src = this.entity.data['picture'];
-				//console.log(this.entity.data['picture']);
-				ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+				var entityImage = new Image;
+				entityImage.src = this.entity.data['picture'];
+				ctx.drawImage(entityImage, this.x, this.y, this.w, this.h);
+				if (typeof (this.overlappingEntity) != "undefined") {
+					var overlappingImage = new Image;
+					overlappingImage.src = this.overlappingEntity.data['picture'];
+					ctx.drawImage(overlappingImage, this.x, this.y, this.w, this.h);
+				}
 			}
 			else {
 				ctx.fillStyle = 'black';
