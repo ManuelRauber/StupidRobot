@@ -17,18 +17,23 @@
 		},
 
 		setEntity: function (entity) {
-			if ((entity.data['type'].substring(0,4) == 'hero') ||
-						(entity.data['type'].substring(0,4) == 'item'))
-			{
-				this.overlappingEntity = entity;
-				this.trigger('Change');
-				return;
-			}
-			//update the intern entity var
+			var entities = {
+				'hero': this.setOverlayEntity(entity),
+				'item': this.setOverlayEntity(entity),
+				'solid': this.setBasicEntity(entity),
+				'free': this.setBasicEntity(entity)
+			};
+			entities[entity.data['type'].substring(0, 4)];
+		},
+
+		setBasicEntity: function (entity) {
 			this.entity = entity;
-			//update the entitytype of this griditem
 			this.entityType = entity.data['type'];
-			//TODO Entity properties
+			this.trigger('Change');
+		},
+
+		setOverlayEntity: function (entity) {
+			this.overlappingEntity = entity;
 			this.trigger('Change');
 		},
 
