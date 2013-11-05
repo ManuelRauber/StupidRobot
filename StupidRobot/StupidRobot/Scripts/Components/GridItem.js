@@ -18,23 +18,23 @@
 
 		setEntity: function (entity) {
 			var entities = {
-				'hero': this.setOverlayEntity(entity),
-				'item': this.setOverlayEntity(entity),
-				'solid': this.setBasicEntity(entity),
-				'free': this.setBasicEntity(entity)
+				'hero': this._setOverlayEntity(entity),
+				'item': this._setOverlayEntity(entity),
+				'soli': this._setBasicEntity(entity),
+				'free': this._setBasicEntity(entity)
 			};
 			entities[entity.data['type'].substring(0, 4)];
+			this.trigger('Change');
 		},
 
-		setBasicEntity: function (entity) {
+		_setBasicEntity: function (entity) {
 			this.entity = entity;
 			this.entityType = entity.data['type'];
-			this.trigger('Change');
 		},
 
-		setOverlayEntity: function (entity) {
+		_setOverlayEntity: function (entity) {
+			console.log("test");
 			this.overlappingEntity = entity;
-			this.trigger('Change');
 		},
 
 		init: function () {
@@ -71,10 +71,12 @@
 				var entityImage = new Image;
 				entityImage.src = this.entity.data['picture'];
 				ctx.drawImage(entityImage, this.x, this.y, this.w, this.h);
+				//console.log(entityImage.src);
 				if (typeof (this.overlappingEntity) != "undefined") {
-					var overlappingImage = new Image;
-					overlappingImage.src = this.overlappingEntity.data['picture'];
-					ctx.drawImage(overlappingImage, this.x, this.y, this.w, this.h);
+					//var overlappingImage = new Image;
+					//overlappingImage.src = this.overlappingEntity.data['picture'];
+					//ctx.drawImage(overlappingImage, this.x, this.y, this.w, this.h);
+					//console.log(overlappingImage.src);
 				}
 			}
 			else {
