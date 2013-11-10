@@ -92,6 +92,9 @@
     <Content Include="Assets\Store\WideLogo.scale-80.png" />
     <Content Include="Scripts\Components\Editor.js" />
     <Content Include="Scripts\Reference.js" />
+    <None Include="Scripts\Commands\CommandManager.js" />
+    <None Include="Scripts\Commands\Editor\RemoveEntity.js" />
+    <None Include="Scripts\Commands\Editor\SetEntity.js" />
     <None Include="Scripts\Components\GridItem.js" />
     <None Include="Scripts\Pages\Entities.js" />
     <None Include="Scripts\Pages\Settings.js" />
