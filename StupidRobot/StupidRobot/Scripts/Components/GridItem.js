@@ -8,16 +8,19 @@
 			this.w = w;
 			this.h = h;
 			this.entityType = entityType;
+			this.possibleOperations = {
+			  'SetEntity': StupidRobot.Commands.SetEntity,
+			  'RemoveEntity': StupidRobot.Commands.RemoveEntity
+			};
 			if (clickable == false) this.unbind('Click');
-			//let this gridItem know, which current entity is selected to place
-			this.bind('EntitySelected', function (selectedEntity) { this.selectedEntity = selectedEntity });
 			this.bind('ThemeChange', function () { this.setEntity(StupidRobot.Editor.GetEntity(this.entityType)) });
 			this.setEntity(StupidRobot.Editor.GetEntity(entityType));
 			return this;
 		},
 
 		setEntity: function (entity) {
-			var my = this;
+		  var my = this;
+
 			var entities = {
 				'hero': function () { my._setOverlayEntity(entity) },
 				'item': function () { my._setOverlayEntity(entity) },
@@ -45,9 +48,7 @@
 			this.isHovering = false;
 
 			this.bind('Click', function () {
-				if (typeof (this.selectedEntity) != "undefined") {
-					this.setEntity(this.selectedEntity);
-				}
+			  StupidRobot.CommandManager.addCommand(this.possibleOperations['SetEntity'].performActionOn(this));
 			});
 
 			this.bind('MouseOver', function () {
