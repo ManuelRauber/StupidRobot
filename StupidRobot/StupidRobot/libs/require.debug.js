@@ -4,6 +4,9 @@
 	var filesToInclude = [
 		'/Scripts/Utils/HtmlUtilities.js',
 		'/Scripts/Game.js',
+    '/Scripts/Commands/CommandManager.js',
+    '/Scripts/Commands/Editor/RemoveEntity.js',
+    '/Scripts/Commands/Editor/SetEntity.js',
 		'/Scripts/Components/Animation/AnimationBase.js',
 		'/Scripts/Components/Animation/FlyIn.js',
 		'/Scripts/Components/BackgroundMusicPlayer.js',
