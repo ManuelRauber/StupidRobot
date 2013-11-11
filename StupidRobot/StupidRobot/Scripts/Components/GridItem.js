@@ -7,7 +7,7 @@
 			this.y = y;
 			this.w = w;
 			this.h = h;
-			this.entityType = entityType;
+			this.originEntity = entityType;
 			this.possibleOperations = {
 			  'SetEntity': StupidRobot.Commands.SetEntity,
 			  'RemoveEntity': StupidRobot.Commands.RemoveEntity
@@ -31,6 +31,17 @@
 			this.trigger('Change');
 		},
 
+		removeEntity: function () {
+		  if (typeof (this.overlappingEntity) != "undefined") {
+		    this.overlappingEntity = undefined;
+		    this.trigger('Change');
+		    return;
+		  }
+      //reset entity to its origin (ground entity)
+		  this.setEntity(StupidRobot.Editor.GetEntity(this.originEntity));
+		  this.trigger('Change');
+		},
+
 		_setBasicEntity: function (entity) {
 			this.entity = entity;
 			this.entityType = entity.data['type'];
@@ -48,7 +59,9 @@
 			this.isHovering = false;
 
 			this.bind('Click', function () {
-			  StupidRobot.CommandManager.addCommand(this.possibleOperations['SetEntity'].performActionOn(this));
+			  var command = this.possibleOperations['SetEntity'];
+			  StupidRobot.CommandManager.addCommand(command);
+			  command.performActionOn(this)
 			});
 
 			this.bind('MouseOver', function () {

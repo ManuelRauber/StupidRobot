@@ -49,7 +49,21 @@
 				var listview = document.getElementById('basicListView').winControl;
 				listview.itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});
-		
+
+
+    //undo
+	  WinJS.Utilities.query('#undo')
+      .listen('click', function () {
+        StupidRobot.CommandManager.undoCommand();
+      });
+
+
+    //redo
+	  WinJS.Utilities.query('#redo')
+      .listen('click', function () {
+        StupidRobot.CommandManager.redoCommand();
+      });
+
 	
 		//show the top and bottom app bars
 		var manageBar = document.getElementById('EditorManageBar').winControl;

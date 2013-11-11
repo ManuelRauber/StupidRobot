@@ -9,22 +9,31 @@
   },
   {
     performActionOn: function (gridItem) {
-      console.log(this.gridItem);
       gridItem.setEntity(this.selectedEntity);
       this.gridItem = gridItem;
+      //that selectedEntity var is saved in this class (for later redos)
+      Crafty.unbind('EntitySelected'); //not sure if this works, it could unbind all events for other setEntity commands too
     },
 
     undo: function () {
-      StupidRobot.Commands.RemoveEntity.performActionOn(this.gridItem);
+      if (typeof (this.gridItem) == "undefined") {
+        console.log("SetEntity: Trying to execute undo for not existing gridItem!")
+        return;
+      }
+      this.gridItem.removeEntity();
     },
 
     redo: function (gridItem) {
+      if (typeof (this.gridItem) == "undefined") {
+        console.log("SetEntity: Trying to execute redo for not existing gridItem!")
+        return;
+      }
       this.performActionOn(this.gridItem);
     }
   }
   );
 
-  //public access
+
 	WinJS.Namespace.define("StupidRobot.Commands", {
 	  SetEntity: {
 	  get: function () {
