@@ -5,40 +5,43 @@
     null,
     {
       init: function () {
-        this.currentCommandIndex = -1;
-        this.commandList = new Array();;
+        this.currentCommandNumber = 0;
+        this.commandList = new Array();
       },
 
       addCommand: function (command) {
-        //check if there are elements after the current pointer
-        if (this.commandList.length != this.currentCommandIndex + 1) {
-          for (var i = 1 ; i <= this.commandList.length - this.currentCommandIndex + 1 ; i++) {
-            this.removeCommand(this.currentCommandIndex + 1 + i);
-          }
+        //delete all commands after the current pointer position
+        while (this.commandList.length != this.currentCommandNumber) {
+          this.removeLastCommand();
         }
         this.commandList.push(command);
-        this.currentCommandIndex++;
+        this.currentCommandNumber++;
       },
 
-      removeCommand: function (index) {
-        this.commandList.splice(index, 1);
+      removeCommand: function (commandNumber) {
+        this.commandList.splice(commandNumber - 1, 1);
       },
 
-      getCommand: function (index) {
-        return this.commandList[index];
+      removeLastCommand: function () {
+        this.commandList.pop();
+      },
+
+      getCommand: function (commandNumber) {
+        //return index - 1, because array starts at 0
+        return this.commandList[commandNumber - 1];
       },
 
       undoCommand: function () {
-        if (this.currentCommandIndex > -1) {
-          this.getCommand(this.currentCommandIndex).undo();
-          this.currentCommandIndex--;
+        if (this.currentCommandNumber > 0) {
+          this.getCommand(this.currentCommandNumber).undo();
+          this.currentCommandNumber--;
         }
       },
 
       redoCommand: function () {
-        if (this.currentCommandIndex < this.commandList.length) {
-          this.getCommand(this.currentCommandIndex + 1).redo();
-          this.currentCommandIndex++;
+        if (this.currentCommandNumber < this.commandList.length) {
+          this.getCommand(this.currentCommandNumber + 1).redo();
+          this.currentCommandNumber++;
         }
       },
     }
