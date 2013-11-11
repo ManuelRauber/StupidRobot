@@ -8,12 +8,14 @@
 			this.w = w;
 			this.h = h;
 			this.originEntity = entityType;
+			this.removeMode = false;
 			this.possibleOperations = {
 			  'SetEntity': StupidRobot.Commands.SetEntity,
 			  'RemoveEntity': StupidRobot.Commands.RemoveEntity
 			};
 			if (clickable == false) this.unbind('Click');
 			this.bind('ThemeChange', function () { this.setEntity(StupidRobot.Editor.GetEntity(this.entityType)) });
+			this.bind('RemoveMode', function (removeMode) { this.removeMode = removeMode; });
 			this.setEntity(StupidRobot.Editor.GetEntity(entityType));
 			return this;
 		},
@@ -59,9 +61,14 @@
 			this.isHovering = false;
 
 			this.bind('Click', function () {
-			  var command = this.possibleOperations['SetEntity'];
-			  StupidRobot.CommandManager.addCommand(command);
-			  command.performActionOn(this)
+			  if (this.removeMode) {
+			    this.removeEntity();
+			  }
+			  else if (!this.removeMode) {
+			    var command = this.possibleOperations['SetEntity'];
+			    StupidRobot.CommandManager.addCommand(command);
+			    command.performActionOn(this)
+			  }
 			});
 
 			this.bind('MouseOver', function () {

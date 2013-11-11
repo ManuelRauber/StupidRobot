@@ -56,6 +56,23 @@
 			});
 
 
+	  //remove
+		var removeFlip = false;
+		WinJS.Utilities.query('#remove')
+      .listen('click', function () {
+        if (!removeFlip) {
+          document.getElementById('remove').style.backgroundColor = 'red';
+          Crafty.trigger('RemoveMode', true);
+          removeFlip = true;
+        }
+        else if (removeFlip) {
+          document.getElementById('remove').style.backgroundColor = '';
+          Crafty.trigger('RemoveMode', false);
+          removeFlip = false;
+        }
+      });
+
+
     //undo
 	  WinJS.Utilities.query('#undo')
       .listen('click', function () {
