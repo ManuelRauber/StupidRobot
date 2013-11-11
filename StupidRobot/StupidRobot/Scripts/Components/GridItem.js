@@ -48,7 +48,7 @@
 			this.isHovering = false;
 
 			this.bind('Click', function () {
-			  StupidRobot.CommandManager.addCommand(this.possibleOperations['SetEntity'], this);
+			  StupidRobot.CommandManager.addCommand(this.possibleOperations['SetEntity'].performActionOn(this));
 			});
 
 			this.bind('MouseOver', function () {

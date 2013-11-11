@@ -7,10 +7,9 @@
       init: function () {
         this.currentCommandIndex = 0;
         this.commandList = [];
-        this.gridItem = [];
       },
 
-      addCommand: function (command, gridItem) {
+      addCommand: function (command) {
         //check if there are elements after the current pointer
         if (this.commandList.length != this.currentCommandIndex) {
           for (var i = 1 ; i <= this.commandList.length - this.currentCommandIndex ; i++) {
@@ -18,34 +17,27 @@
           }
         }
         this.commandList.push(command);
-        this.gridItem.push(gridItem);
         this.currentCommandIndex++;
-        command.performActionOn(gridItem);
       },
 
       removeCommand: function (index) {
         this.commandList.splice(index, 1);
-        this.gridItem.splice(index, 1);
       },
 
       getCommand: function (index) {
         return this.commandList[index];
       },
 
-      getGridItem: function (index) {
-        return this.gridItem[index];
-      },
-
       undoCommand: function () {
         if (this.currentCommandIndex > 0) {
-          this.getCommand(this.currentCommandIndex).undo(this.getGridItem(this.currentCommandIndex));
+          this.getCommand(this.currentCommandIndex).undo();
           this.currentCommandIndex--;
         }
       },
 
       redoCommand: function () {
         if (this.currentCommandIndex < this.commandList.length) {
-          this.getCommand(this.currentCommandIndex + 1).redo(this.getGridItem(this.currentCommandIndex + 1));
+          this.getCommand(this.currentCommandIndex + 1).redo();
           this.currentCommandIndex++;
         }
       },

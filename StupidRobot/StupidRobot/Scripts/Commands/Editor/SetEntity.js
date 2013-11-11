@@ -9,28 +9,26 @@
   },
   {
     performActionOn: function (gridItem) {
+      console.log(this.gridItem);
       gridItem.setEntity(this.selectedEntity);
+      this.gridItem = gridItem;
     },
 
-    undo: function (gridItem) {
-      StupidRobot.Commands.RemoveEntity.performActionOn(gridItem);
+    undo: function () {
+      StupidRobot.Commands.RemoveEntity.performActionOn(this.gridItem);
     },
 
     redo: function (gridItem) {
-      this.performActionOn(gridItem);
+      this.performActionOn(this.gridItem);
     }
   }
   );
 
   //load the Class
-	var setEntity = new setEntityClass();
+	//var setEntity = new setEntityClass();
 
   //public access
 	WinJS.Namespace.define("StupidRobot.Commands", {
-	  SetEntity: {
-	    get: function () {
-	      return setEntity;
-	    }
-	  }
+	  SetEntity: new setEntityClass()
 	});
 })();
