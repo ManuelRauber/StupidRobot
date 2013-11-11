@@ -29,7 +29,7 @@
 				//replace the "currentEntity" Picture on the bottom left of the editor
 				document.getElementById('currentEntity').src = StupidRobot.Editor.LoadedEntities.getItem(entity.index).data['picture'];
 
-				//tell all the gridItems, which entity is currently selected, so they can be overwritten by it
+			  //tell all commands, which entity is currently selected, so they can use it
 				Crafty.trigger('EntitySelected', StupidRobot.Editor.LoadedEntities.getItem(entity.index));
 			});
 
@@ -45,9 +45,14 @@
 				//tell all the gridItems, that the theme of their entity has changed
 				Crafty.trigger('ThemeChange', e.target.title);
 
-				//update the entity listview in the editor
-				var listview = document.getElementById('basicListView').winControl;
-				listview.itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
+        //load the new entity out of the list
+				var entity = document.getElementById('basicListView').winControl.currentItem;
+        			 
+        //update the currentEntity value on the new theme
+				document.getElementById('currentEntity').src = StupidRobot.Editor.LoadedEntities.getItem(entity.index).data['picture'];
+
+			  //tell all commands, which entity is currently selected, so they can use it
+				Crafty.trigger('EntitySelected', StupidRobot.Editor.LoadedEntities.getItem(entity.index));
 			});
 
 
