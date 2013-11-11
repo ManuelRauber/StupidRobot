@@ -11,8 +11,6 @@
     performActionOn: function (gridItem) {
       gridItem.setEntity(this.selectedEntity);
       this.gridItem = gridItem;
-      //that selectedEntity var is saved in this class (for later redos)
-      Crafty.unbind('EntitySelected'); //not sure if this works, it could unbind all events for other setEntity commands too
     },
 
     undo: function () {
