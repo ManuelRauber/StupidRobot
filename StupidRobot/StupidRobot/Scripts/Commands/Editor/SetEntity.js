@@ -24,11 +24,13 @@
   }
   );
 
-  //load the Class
-	//var setEntity = new setEntityClass();
-
   //public access
 	WinJS.Namespace.define("StupidRobot.Commands", {
-	  SetEntity: new setEntityClass()
+	  SetEntity: {
+	  get: function () {
+	    return new setEntityClass();
+	  }
+	}
+
 	});
 })();
