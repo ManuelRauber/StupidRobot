@@ -77,7 +77,7 @@
 				this.x1 = this.x1 - (this.w * (this.blocks / 2));
 				this.y1 = this.y1 - (this.h * (this.blocks / 2));
 			}
-			//fill the grid with empty entities
+			//fill the grid with empty griditems
 			for (var i = 1; i <= this.blocks; i++) {
 				for (var j = 1; j <= this.blocks ; j++) {
 					this.addGridItem(j, i, 'free[0]', true);

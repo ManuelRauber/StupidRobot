@@ -9,13 +9,17 @@
 			this.h = h;
 			this.originEntity = entityType;
 			this.removeMode = false;
+      //All actions, which can be executed on this griditem
 			this.possibleOperations = {
 			  'SetEntity': StupidRobot.Commands.SetEntity,
 			  'RemoveEntity': StupidRobot.Commands.RemoveEntity
 			};
 			if (clickable == false) this.unbind('Click');
+      //Event: ThemeChange, change the entity of this griditem to the new style
 			this.bind('ThemeChange', function () { this.setEntity(StupidRobot.Editor.GetEntity(this.entityType)) });
+      //Event: RemoveMode, the user selected the removebutton
 			this.bind('RemoveMode', function (removeMode) { this.removeMode = removeMode; });
+      //set the Entity of the constructor, no need to add this first setupcommand to the CommandManager
 			this.setEntity(StupidRobot.Editor.GetEntity(entityType));
 			return this;
 		},
@@ -39,7 +43,6 @@
 		    this.trigger('Change');
 		    return;
 		  }
-      //reset entity to its origin (ground entity)
 		  this.setEntity(StupidRobot.Editor.GetEntity(this.originEntity));
 		  this.trigger('Change');
 		},
@@ -62,12 +65,13 @@
 
 			this.bind('Click', function () {
 			  if (this.removeMode) {
+          //TODO: the command should be removed as well
 			    this.removeEntity();
 			  }
 			  else if (!this.removeMode) {
+          //TODO look into CommandMAnager, command over command over command
 			    var command = this.possibleOperations['SetEntity'];
-			    StupidRobot.CommandManager.addCommand(command);
-			    command.performActionOn(this)
+			    StupidRobot.CommandManager.addAction(this, command);
 			  }
 			});
 

@@ -9,21 +9,29 @@
         this.commandList = new Array();
       },
 
-      addCommand: function (command) {
+      addAction: function (griditem, commandType) {
         //delete all commands after the current pointer position
         while (this.commandList.length != this.currentCommandNumber) {
           this.removeLastCommand();
         }
-        this.commandList.push(command);
+        //add the new command to the commandlist and execute it
+        this.commandList.push(StupidRobot.Command(griditem, commandType));
+        this.getLastCommand().doAction();
+
         this.currentCommandNumber++;
+        //TODO: commands over commands over commands are allowed
       },
 
-      removeCommand: function (commandNumber) {
+      removeAction: function (commandNumber) {
         this.commandList.splice(commandNumber - 1, 1);
       },
 
       removeLastCommand: function () {
         this.commandList.pop();
+      },
+
+      getLastCommand: function () {
+        return this.commandList[this.commandList.length - 1];
       },
 
       getCommand: function (commandNumber) {
@@ -33,14 +41,14 @@
 
       undoCommand: function () {
         if (this.currentCommandNumber > 0) {
-          this.getCommand(this.currentCommandNumber).undo();
+          this.getCommand(this.currentCommandNumber).undoAction();
           this.currentCommandNumber--;
         }
       },
 
       redoCommand: function () {
         if (this.currentCommandNumber < this.commandList.length) {
-          this.getCommand(this.currentCommandNumber + 1).redo();
+          this.getCommand(this.currentCommandNumber + 1).doAction();
           this.currentCommandNumber++;
         }
       },

@@ -5,6 +5,7 @@
 		'/Scripts/Utils/HtmlUtilities.js',
 		'/Scripts/Game.js',
     '/Scripts/Commands/CommandManager.js',
+    '/Scripts/Commands/Command.js',
     '/Scripts/Commands/Editor/RemoveEntity.js',
     '/Scripts/Commands/Editor/SetEntity.js',
 		'/Scripts/Components/Animation/AnimationBase.js',
