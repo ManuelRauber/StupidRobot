@@ -11,6 +11,7 @@
 
       addAction: function (griditem, commandType) {
         //delete all commands after the current pointer position
+        //TODO: should clean old command classes
         while (this.commandList.length != this.currentCommandNumber) {
           this.removeLastCommand();
         }

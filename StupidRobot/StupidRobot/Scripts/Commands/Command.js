@@ -16,7 +16,7 @@
       if (this.commandType.getActionName() == 'setEntity')
         StupidRobot.Commands.RemoveEntity.performActionOn(this.gridItem);
       if (this.commandType.getActionName() == 'removeEntity')
-        StupidRobot.Commands.SetEntity.performActionOn(this.gridItem);
+        //StupidRobot.Commands.SetEntity.performActionOn(this.gridItem); <- darf kein neues objekt erzeugen, da sonst currentEntity info fehlt
     },
   }
   );

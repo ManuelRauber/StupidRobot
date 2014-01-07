@@ -64,15 +64,15 @@
 			this.isHovering = false;
 
 			this.bind('Click', function () {
+			  var command = null;
+        //is the remove button active?
 			  if (this.removeMode) {
-          //TODO: the command should be removed as well
-			    this.removeEntity();
+			    var command = this.possibleOperations['SetEntity'];
 			  }
 			  else if (!this.removeMode) {
-          //TODO look into CommandMAnager, command over command over command
 			    var command = this.possibleOperations['SetEntity'];
-			    StupidRobot.CommandManager.addAction(this, command);
 			  }
+			  StupidRobot.CommandManager.addAction(this, command);
 			});
 
 			this.bind('MouseOver', function () {

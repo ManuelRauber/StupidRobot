@@ -5,7 +5,10 @@
   function () {
     var my = this;
     //TODO: Crashes if selectedEntity is NULL
-    Crafty.bind('EntitySelected', function (selectedEntity) { my.selectedEntity = selectedEntity });
+    Crafty.bind('EntitySelected', function (selectedEntity) {
+      if (typeof (my.selectedEntity) == "undefined")
+        my.selectedEntity = selectedEntity;
+    });
   },
   {
     performActionOn: function (gridItem) {

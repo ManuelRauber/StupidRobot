@@ -2,30 +2,16 @@
   "use strict";
 
   var removeEntityClass = WinJS.Class.define(
-  null,
+    null,
   {
     performActionOn: function (gridItem) {
-      gridItem.removeEntity(this.selectedEntity); //TODO
-      this.gridItem = gridItem;
+      gridItem.removeEntity();
     },
 
-    undo: function () {
-      if (typeof (this.gridItem) == "undefined") {
-        console.log("RemoveEntity: Trying to execute undo for not existing gridItem!")
-        return;
-      }
-      this.gridItem.setEntity();
-    },
-
-    redo: function (gridItem) {
-      if (typeof (this.gridItem) == "undefined") {
-        console.log("RemoveEntity: Trying to execute redo for not existing gridItem!")
-        return;
-      }
-      this.performActionOn(this.gridItem);
+    getActionName: function () {
+      return 'removeEntity';
     }
-  }
-  );
+  });
 
 
   WinJS.Namespace.define("StupidRobot.Commands", {

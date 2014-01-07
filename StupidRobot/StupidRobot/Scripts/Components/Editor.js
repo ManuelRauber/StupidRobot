@@ -3,18 +3,6 @@
 (function() {
 	"use strict";
 
-	var editorMode = WinJS.Class.define(
-		null,
-		null,
-		{			
-			Edit: function() {
-				return 0;
-			},
-			View: function() {
-				return 1;
-			}
-	});
-
 	Crafty.c('Editor', {
 		init: function() {
 			this.windowWidth = StupidRobot.Game.width;
@@ -64,7 +52,4 @@
 		}
 	});
 
-	WinJS.Namespace.define('StupidRobot.Editor', {
-		EditorMode: editorMode
-	});
 })();
