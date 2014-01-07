@@ -37,12 +37,20 @@
 			this.trigger('Change');
 		},
 
+		getUndoEntity: function () {
+		  return this.undoEntity;
+		},
+
 		removeEntity: function () {
 		  if (typeof (this.overlappingEntity) != "undefined") {
+		    this.undoEntity = this.overlappingEntity;
 		    this.overlappingEntity = undefined;
 		    this.trigger('Change');
 		    return;
 		  }
+      //save the entity in this griditem, so an undo can recreate the previous state
+		  this.undoEntity = this.entity;
+      //reset the entity in this griditem to its origin (free entity)
 		  this.setEntity(StupidRobot.Editor.GetEntity(this.originEntity));
 		  this.trigger('Change');
 		},
@@ -67,7 +75,7 @@
 			  var command = null;
         //is the remove button active?
 			  if (this.removeMode) {
-			    var command = this.possibleOperations['SetEntity'];
+			    var command = this.possibleOperations['RemoveEntity'];
 			  }
 			  else if (!this.removeMode) {
 			    var command = this.possibleOperations['SetEntity'];

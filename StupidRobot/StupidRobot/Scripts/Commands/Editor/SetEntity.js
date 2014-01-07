@@ -15,6 +15,11 @@
       gridItem.setEntity(this.selectedEntity);
     },
 
+    setSelectedEntity: function (selectedEntity) {
+      this.selectedEntity = selectedEntity;
+      return this;
+    },
+
     getActionName: function () {
       return 'setEntity';
     }

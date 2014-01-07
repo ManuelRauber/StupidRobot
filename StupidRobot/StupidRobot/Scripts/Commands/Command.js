@@ -15,9 +15,14 @@
     undoAction: function () {
       if (this.commandType.getActionName() == 'setEntity')
         StupidRobot.Commands.RemoveEntity.performActionOn(this.gridItem);
-      if (this.commandType.getActionName() == 'removeEntity')
-        //StupidRobot.Commands.SetEntity.performActionOn(this.gridItem); <- darf kein neues objekt erzeugen, da sonst currentEntity info fehlt
+      if (this.commandType.getActionName() == 'removeEntity') {
+        StupidRobot.Commands.SetEntity.setSelectedEntity(this.gridItem.getUndoEntity()).performActionOn(this.gridItem);     
+      }
     },
+
+    getGridItem: function () {
+      return this.gridItem;
+    }
   }
   );
 
