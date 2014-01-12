@@ -23,8 +23,8 @@
 		  var my = this;
 
 			var entities = {
-				'hero': function () { my._setOverlayEntity(entity) },
-				'item': function () { my._setOverlayEntity(entity) },
+				'hero': function () { my._setBasicEntity(entity) },
+				'item': function () { my._setBasicEntity(entity) },
 				'soli': function () { my._setBasicEntity(entity) },
 				'free': function () { my._setBasicEntity(entity) }
 			};
@@ -59,11 +59,13 @@
 			this.entityType = entity.data['type'];
 		},
 
+    /*
 		_setOverlayEntity: function (entity) {
       //only add the overlayentity when this entity is a free (not solid) one
 		  if (this.getEntity().data['type'].substring(0, 4) != 'soli')
         this.overlappingEntity = entity;
 		},
+    */
 
 		init: function () {
 			this.requires('Mouse');
@@ -105,11 +107,13 @@
 				var entityImage = new Image;
 				entityImage.src = this.entity.data['picture'];
 				ctx.drawImage(entityImage, this.x, this.y, this.w, this.h);
+        /*
 				if (typeof (this.overlappingEntity) != "undefined") {
 					var overlappingImage = new Image;
 					overlappingImage.src = this.overlappingEntity.data['picture'];
 					ctx.drawImage(overlappingImage, this.x, this.y, this.w, this.h);
 				}
+        */
 			}
 			else {
 				ctx.fillStyle = 'black';
