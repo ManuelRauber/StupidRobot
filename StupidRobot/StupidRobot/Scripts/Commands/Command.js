@@ -8,10 +8,13 @@
     this.commandType = commandType;
   },
   {
+
+    //execute this command (firstly used when this command was added to the CommandManager)
     doAction: function () {
       this.commandType.performActionOn(this.gridItem);
     },
     
+    //execute the counterpart of this command
     undoAction: function () {
       if (this.commandType.getActionName() == 'setEntity')
         StupidRobot.Commands.RemoveEntity.performActionOn(this.gridItem);

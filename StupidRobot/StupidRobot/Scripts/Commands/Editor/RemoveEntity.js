@@ -4,6 +4,8 @@
   var removeEntityClass = WinJS.Class.define(
     null,
   {
+
+    //perform the specific action of this class on the gridItem
     performActionOn: function (gridItem) {
       gridItem.removeEntity();
     },
