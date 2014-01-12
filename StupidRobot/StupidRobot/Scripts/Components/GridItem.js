@@ -9,11 +9,6 @@
 			this.h = h;
 			this.originEntity = entityType;
 			this.removeMode = false;
-      //All actions, which can be executed on this griditem
-			this.possibleOperations = {
-			  'SetEntity': StupidRobot.Commands.SetEntity,
-			  'RemoveEntity': StupidRobot.Commands.RemoveEntity
-			};
 			if (clickable == false) this.unbind('Click');
       //Event: ThemeChange, change the entity of this griditem to the new style
 			this.bind('ThemeChange', function () { this.setEntity(StupidRobot.Editor.GetEntity(this.entityType)) });
@@ -75,10 +70,10 @@
 			  var command = null;
         //is the remove button active?
 			  if (this.removeMode) {
-			    var command = this.possibleOperations['RemoveEntity'];
+			    var command = StupidRobot.Commands.removeEntity;
 			  }
 			  else if (!this.removeMode) {
-			    var command = this.possibleOperations['SetEntity'];
+			    var command = StupidRobot.Commands.SetEntity;
 			  }
 			  StupidRobot.CommandManager.addAction(this, command);
 			});

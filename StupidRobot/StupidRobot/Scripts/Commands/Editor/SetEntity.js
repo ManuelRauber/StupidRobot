@@ -3,14 +3,11 @@
 
 	var setEntityClass = WinJS.Class.define(
   function () {
-    var my = this;
-    //TODO: Crashes if selectedEntity is NULL
-    Crafty.bind('EntitySelected', function (selectedEntity) {
-      if (typeof (my.selectedEntity) == "undefined")
-        my.selectedEntity = selectedEntity;
-    });
+    var currentSelectedEntity = document.getElementById('basicListView').winControl.currentItem;
+    this.setSelectedEntity(StupidRobot.Editor.LoadedEntities.getItem(currentSelectedEntity.index));
   },
   {
+
     performActionOn: function (gridItem) {
       gridItem.setEntity(this.selectedEntity);
     },

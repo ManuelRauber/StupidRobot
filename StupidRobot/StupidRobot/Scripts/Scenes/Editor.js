@@ -50,9 +50,6 @@
         			 
         //update the currentEntity value on the new theme
 				document.getElementById('currentEntity').src = StupidRobot.Editor.LoadedEntities.getItem(entity.index).data['picture'];
-
-			  //tell all commands, which entity is currently selected, so they can use it
-			  Crafty.trigger('EntitySelected', StupidRobot.Editor.LoadedEntities.getItem(entity.index));
 			});
 
 
