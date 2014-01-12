@@ -32,6 +32,10 @@
 			this.trigger('Change');
 		},
 
+		getEntity: function () {
+		  return this.entity;
+		},
+
 		getUndoEntity: function () {
 		  return this.undoEntity;
 		},
@@ -56,7 +60,9 @@
 		},
 
 		_setOverlayEntity: function (entity) {
-			this.overlappingEntity = entity;
+      //only add the overlayentity when this entity is a free (not solid) one
+		  if (this.getEntity().data['type'].substring(0, 4) != 'soli')
+        this.overlappingEntity = entity;
 		},
 
 		init: function () {
