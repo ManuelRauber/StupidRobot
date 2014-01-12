@@ -70,7 +70,7 @@
 			  var command = null;
         //is the remove button active?
 			  if (this.removeMode) {
-			    var command = StupidRobot.Commands.removeEntity;
+			    var command = StupidRobot.Commands.RemoveEntity;
 			  }
 			  else if (!this.removeMode) {
 			    var command = StupidRobot.Commands.SetEntity;
