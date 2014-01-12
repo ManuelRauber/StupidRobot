@@ -9,12 +9,16 @@
   {
 
     performActionOn: function (gridItem) {
-      gridItem.setEntity(this.selectedEntity);
+      gridItem.setEntity(this.getSelectedEntity());
     },
 
     setSelectedEntity: function (selectedEntity) {
       this.selectedEntity = selectedEntity;
-      return this;
+    },
+
+    getSelectedEntity: function () {
+      //ask for the newest entity of this entitytype (important at themechange)
+      return StupidRobot.Editor.GetEntity(this.selectedEntity.data['type']);
     },
 
     getActionName: function () {
