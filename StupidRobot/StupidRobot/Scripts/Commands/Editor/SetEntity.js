@@ -18,6 +18,8 @@
     //update the entity of this class
     setSelectedEntity: function (selectedEntity) {
       this.selectedEntity = selectedEntity;
+      //return value needed for method chaining in Command.js
+      return this;
     },
 
     //get the newest entity of this entitytype (important at themechange)
