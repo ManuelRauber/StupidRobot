@@ -25,7 +25,7 @@
 
 		isVisible: true,
 
-		getGrid: function () {
+		getGridItems: function () {
 			return this.gridItemList;
 		},
 
@@ -47,10 +47,14 @@
 
 			//create new Entity
 			this.gridItemList.push({
-				"row": row, 
-				"column": column, 
+				'row': row, 
+				'column': column, 
 				'entity': Crafty.e('2D, Canvas, GridItem')
-										.GridItem(x_gridItem, y_gridItem, this.w, this.h, entityType, clickable)});
+										.GridItem(x_gridItem, y_gridItem, this.w, this.h, entityType, clickable)
+			});
+
+			console.log(this.getGridItems.length);
+			//console.log(this.getGridItems[0]['row']);
 		},
 
 		init: function () {

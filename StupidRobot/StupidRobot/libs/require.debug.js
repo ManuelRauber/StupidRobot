@@ -29,7 +29,7 @@
 		'/Scripts/Utils/Flyouts.js',
 		'/Scripts/Main.js',
 		'/Scripts/Utils/Settings.js',
-    '/Scripts/Utils/Listeners/Editor/CurrentEntityListener.js'
+    '/Scripts/Utils/PersistanceManager.js'
 	];
 	
 	for (var i = 0; i < filesToInclude.length; i++) {

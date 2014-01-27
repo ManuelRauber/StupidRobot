@@ -8,8 +8,9 @@
 			this.windowWidth = StupidRobot.Game.width;
 			this.windowHeight = StupidRobot.Game.height;
 
-			//Map Creation
+			//Editor Event Bindings
 			this.bind('CreateMap', this._createMap);
+			this.bind('SaveMap', this.saveMap);
 		},
 
 		_createMap: function (data) {
@@ -49,6 +50,26 @@
 				this._grid.addGridItem(i, blocks, 'solid[0]', false);
 				this._grid.addGridItem(blocks, i, 'solid[0]', false);
 			}
+
+			this.grid = this._grid;
+		},
+
+		saveMap: function (file) {
+		  if (typeof (this.grid) != 'undefined') {
+		    //first check if the actual map to save is valid
+		    var gridItems = this.grid.getGridItems();
+		    //multiple heroes?
+		    var herocount = 0;
+		    for (var i = 1; i <= gridItems.length ; i++)
+		    {
+		      if (gridItems[i].entity.getEntity.data['type'].substring(0, 4) == 'hero')
+		        herocount++;
+		    }
+		    console.log(herocount);
+		  }
+		  
+      //save the map
+		  //StupidRobot.Editor.PersistenceManager.saveMap(file);
 		}
 	});
 

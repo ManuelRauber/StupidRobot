@@ -107,6 +107,7 @@
     <Content Include="Pages\AppBars\EditorBottom.html" />
     <Content Include="Pages\AppBars\EditorTop.html" />
     <None Include="Scripts\Utils\Flyouts.js" />
+    <None Include="Scripts\Utils\PersistanceManager.js" />
     <None Include="Scripts\Utils\Settings.js" />
     <None Include="Libs\require.debug.js" />
     <None Include="Libs\require.release.js" />
