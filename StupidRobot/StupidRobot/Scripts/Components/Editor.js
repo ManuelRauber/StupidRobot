@@ -62,8 +62,9 @@
 		    var herocount = 0;
 		    for (var i = 1; i <= gridItems.length ; i++)
 		    {
-		      if (gridItems[i].entity.getEntity.data['type'].substring(0, 4) == 'hero')
-		        herocount++;
+		      //if (gridItems[i].entity.getEntity.data['type'].substring(0, 4) == 'hero')
+		      //herocount++;
+		      console.log(gridItems[i]['row']);
 		    }
 		    console.log(herocount);
 		  }
