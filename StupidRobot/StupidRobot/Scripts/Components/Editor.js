@@ -56,21 +56,22 @@
 
 		saveMap: function (file) {
 		  if (typeof (this.grid) != 'undefined') {
+
 		    //first check if the actual map to save is valid
 		    var gridItems = this.grid.getGridItems();
 		    //multiple heroes?
 		    var herocount = 0;
-		    for (var i = 1; i <= gridItems.length ; i++)
-		    {
-		      //if (gridItems[i].entity.getEntity.data['type'].substring(0, 4) == 'hero')
-		      //herocount++;
-		      console.log(gridItems[i]['row']);
+		    for (var i = 0; i < gridItems.length ; i++) {
+		      if (gridItems[i]['entity'].getEntity().data['type'].substring(0, 4) == 'hero')
+		        herocount++;
 		    }
-		    console.log(herocount);
+		    if (herocount != 1) {
+          //TODO: no or too many heroes
+		    }
+
+		    //save the map
+		    StupidRobot.Editor.PersistenceManager.saveMapFromList(file, gridItems);
 		  }
-		  
-      //save the map
-		  //StupidRobot.Editor.PersistenceManager.saveMap(file);
 		}
 	});
 
