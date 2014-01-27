@@ -7,14 +7,14 @@
 			this.y = y;
 			this.w = w;
 			this.h = h;
-			this.originEntity = entityType;
+			this.originEntityType = entityType;
 			this.removeMode = false;
 			if (clickable == false) this.unbind('Click');
       //Event: ThemeChange, change the entity of this griditem to the new style
 			this.bind('ThemeChange', function () { this.setEntity(StupidRobot.Editor.GetEntity(this.entityType)) });
       //Event: RemoveMode, the user selected the removebutton
 			this.bind('RemoveMode', function (removeMode) { this.removeMode = removeMode; });
-      //set the Entity of the constructor, no need to add this first setupcommand to the CommandManager
+		  //set the Entity of the constructor, no need to add this first setupcommand to the CommandManager
 			this.setEntity(StupidRobot.Editor.GetEntity(entityType));
 			return this;
 		},
@@ -22,8 +22,8 @@
 		setEntity: function (entity) {
 		  var my = this;
 
-			var entities = {
-				'hero': function () { my._setBasicEntity(entity) },
+		  var entities = {
+		    'hero': function () { my._setBasicEntity(entity) },
 				'item': function () { my._setBasicEntity(entity) },
 				'soli': function () { my._setBasicEntity(entity) },
 				'free': function () { my._setBasicEntity(entity) }
@@ -50,7 +50,7 @@
       //save the entity in this griditem, so an undo can recreate the previous state
 		  this.undoEntity = this.entity;
       //reset the entity in this griditem to its origin (free entity)
-		  this.setEntity(StupidRobot.Editor.GetEntity(this.originEntity));
+		  this.setEntity(StupidRobot.Editor.GetEntity(this.originEntityType));
 		  this.trigger('Change');
 		},
 
