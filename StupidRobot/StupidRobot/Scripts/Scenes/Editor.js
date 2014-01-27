@@ -18,7 +18,64 @@
 				});
 			});
 
+	  //Save button
+		WinJS.Utilities.query('#save')
+      .listen('click', function () {
+        // Create the picker object and set options 
+        var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+        savePicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.documentsLibrary;
+        // Dropdown of file types the user can save the file as 
+        savePicker.fileTypeChoices.insert("StupidRobot Game Map", [".smap"]);
+        // Default file name if the user does not type one in or select a file to replace 
+        savePicker.suggestedFileName = "My Map";
 
+        savePicker.pickSaveFileAsync().then(function (file) {
+          if (file) {
+            // Prevent updates to the remote version of the file until we finish making changes and call CompleteUpdatesAsync. 
+            Windows.Storage.CachedFileManager.deferUpdates(file);
+            // write to file 
+            Windows.Storage.FileIO.writeTextAsync(file, file.name).done(function () {
+              // Let Windows know that we're finished changing the file so the other app can update the remote version of the file. 
+              // Completing updates may require Windows to ask for user input. 
+              Windows.Storage.CachedFileManager.completeUpdatesAsync(file).done(function (updateStatus) {
+                if (updateStatus === Windows.Storage.Provider.FileUpdateStatus.complete) {
+                  WinJS.log && WinJS.log("File " + file.name + " was saved.", "sample", "status");
+                } else {
+                  WinJS.log && WinJS.log("File " + file.name + " couldn't be saved.", "sample", "status");
+                }
+              });
+            });
+          } else {
+            WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
+          }
+        });
+      });
+
+	  //load button
+		WinJS.Utilities.query('#load')
+      .listen('click', function () {
+        // Verify that we are currently not snapped, or that we can unsnap to open the picker
+
+        var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+        openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
+        openPicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.picturesLibrary;
+        // Users expect to have a filtered view of their folders depending on the scenario. 
+        // For example, when choosing a documents folder, restrict the filetypes to documents for your application. 
+        openPicker.fileTypeFilter.replaceAll([".png", ".jpg", ".jpeg"]);
+
+        // Open the picker for the user to pick a file 
+        openPicker.pickSingleFileAsync().then(function (file) {
+          if (file) {
+            // Application now has read/write access to the picked file 
+            WinJS.log && WinJS.log("Picked photo: " + file.name, "sample", "status");
+          } else {
+            // The picker was dismissed with no selected file 
+            WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
+          }
+        });
+      });
+
+		
 		//Editor Bottom Menu Bar
 		//Enttiy Selection in List
 		WinJS.Utilities.query('#basicListView')
