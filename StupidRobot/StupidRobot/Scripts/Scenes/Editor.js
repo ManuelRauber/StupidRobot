@@ -38,7 +38,7 @@
 		WinJS.Utilities.query('.themeButtons')
 			.listen('click', function (e) {
 				document.getElementById('changeFlyout').winControl.hide();
-
+				
 				//change the entity theme in Scripts/Pages/Entities
 				StupidRobot.Editor.ChangeTheme(e.target.title);
 
@@ -50,6 +50,9 @@
         			 
         //update the currentEntity value on the new theme
 				document.getElementById('currentEntity').src = StupidRobot.Editor.LoadedEntities.getItem(entity.index).data['picture'];
+
+			  //update visible entity list in editor
+				document.getElementById('basicListView').winControl.itemDataSource = StupidRobot.Editor.LoadedEntities.dataSource;
 			});
 
 
