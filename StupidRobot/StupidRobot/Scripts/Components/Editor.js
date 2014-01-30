@@ -11,6 +11,7 @@
 			//Editor Event Bindings
 			this.bind('CreateMap', this._createMap);
 			this.bind('SaveMap', this.saveMap);
+			this.bind('LoadMap', this.loadMap);
 		},
 
 		_createMap: function (data) {
@@ -72,6 +73,16 @@
 		    //save the map
 		    StupidRobot.Editor.PersistenceManager.saveMapFromList(file, gridItems);
 		  }
+		},
+
+		loadMap: function (file) {
+      //create new map
+		  //this._createMap();
+
+		  //fill the new map with content from external file
+		  var data = StupidRobot.Editor.PersistenceManager.loadMapData(file);
+		  console.log(data);
+
 		}
 	});
 

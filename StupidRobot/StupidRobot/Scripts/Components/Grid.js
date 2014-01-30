@@ -37,11 +37,13 @@
 			//check if a entity already exists, delete it then
 			for (var i = 0; i < this.gridItemList.length; i++) {
 				if (this.gridItemList[i]['row'] == row && this.gridItemList[i]['column'] == column) {
-					this.gridItemList[i]['entity'].each(function () {
+          this.gridItemList[i]['entity'].each(function () {
 						if (!this.has("Persist")) {
 							this.destroy();
 						}
-					});					
+          });
+				  //now delete the entry in gridItemList. A new one with this row & column will be pushed below
+          this.gridItemList.splice(i, 1);
 				}
 			}
 
