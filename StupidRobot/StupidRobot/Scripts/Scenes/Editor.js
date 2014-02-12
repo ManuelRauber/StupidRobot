@@ -21,41 +21,21 @@
 	  //Save button
 		WinJS.Utilities.query('#save')
       .listen('click', function () {
-        // Create the picker object and set options 
-        var savePicker = new Windows.Storage.Pickers.FileSavePicker();
-        savePicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.documentsLibrary;
-        // Dropdown of file types the user can save the file as 
-        savePicker.fileTypeChoices.insert("StupidRobot Game Map", [".smap"]);
-        // Default file name if the user does not type one in or select a file to replace 
-        savePicker.suggestedFileName = "My Map";
-
-        savePicker.pickSaveFileAsync().then(function (file) {
-          if (file) {
-            Crafty.trigger('SaveMap', file);
-          } else {
-            WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
-          }
-        });
+        var mapname = document.getElementById('newName').value;
+        Crafty.trigger('SaveMap', mapname);
       });
 
 	  //load button
 		WinJS.Utilities.query('#load')
       .listen('click', function () {
-        var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
-        openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
-        openPicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.picturesLibrary;
-        // Users expect to have a filtered view of their folders depending on the scenario. 
-        // For example, when choosing a documents folder, restrict the filetypes to documents for your application. 
-        openPicker.fileTypeFilter.replaceAll([".xml"]);
-
-        // Open the picker for the user to pick a file 
-        openPicker.pickSingleFileAsync().then(function (file) {
-          if (file) {
-            Crafty.trigger('LoadMap', file);
-          } else {
-            WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
-          }
-        });
+        //get all maps from the local space
+        var mapList = StupidRobot.Editor.PersistenceManager.getFilesFromLocalSpace();
+        console.log(mapList);
+        /*
+        for (var i = 0 ; i < mapList.size; i++) {
+          console.log(mapList.getAt(i).name);
+        }
+        */
       });
 
 		

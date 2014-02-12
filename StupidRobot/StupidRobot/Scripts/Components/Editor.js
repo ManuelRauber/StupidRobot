@@ -55,7 +55,7 @@
 			this.grid = this._grid;
 		},
 
-		saveMap: function (file) {
+		saveMap: function (mapname) {
 		  if (typeof (this.grid) != 'undefined') {
 
 		    //first check if the actual map to save is valid
@@ -71,7 +71,7 @@
 		    }
 
 		    //save the map
-		    StupidRobot.Editor.PersistenceManager.saveMapFromList(file, gridItems);
+		    StupidRobot.Editor.PersistenceManager.saveMapFromList(mapname, gridItems);
 		  }
 		},
 

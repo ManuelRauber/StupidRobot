@@ -2,9 +2,11 @@
 	"use strict";
 
 	var PersistanceManagerClass = WinJS.Class.define(
-  null,
+  function () {
+    this.localFolder = Windows.Storage.ApplicationData.current.localFolder;
+  },
   {
-    saveMapFromList: function (file, items) {
+    saveMapFromList: function (mapname, items) {
       //root node
       var xml = document.createElement('stupidmap');
 
@@ -32,19 +34,15 @@
         xml.appendChild(xmlnode);
       }
 
-      // Prevent updates to the remote version of the file until we finish making changes and call CompleteUpdatesAsync. 
-      Windows.Storage.CachedFileManager.deferUpdates(file);
-      // write to file 
-      Windows.Storage.FileIO.writeTextAsync(file, xml.outerHTML).done(function () {
-        // Let Windows know that we're finished changing the file so the other app can update the remote version of the file. 
-        // Completing updates may require Windows to ask for user input. 
-        Windows.Storage.CachedFileManager.completeUpdatesAsync(file).done(function (updateStatus) {
-          if (updateStatus === Windows.Storage.Provider.FileUpdateStatus.complete) {
-            WinJS.log && WinJS.log("File " + file.name + " was saved.", "sample", "status");
-          } else {
-            WinJS.log && WinJS.log("File " + file.name + " couldn't be saved.", "sample", "status");
-          }
-        });
+      this.localFolder.createFileAsync(mapname + ".xml", Windows.Storage.CreationCollisionOption.openIfExists)
+        .then(function (file) {
+          Windows.Storage.FileIO.writeTextAsync(file, xml.outerHTML);
+        })
+    },
+
+    getFilesFromLocalSpace: function () {
+      this.localFolder.getFilesAsync().done(function (fileList) {
+        return fileList;
       });
     },
 
