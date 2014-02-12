@@ -71,7 +71,7 @@
 		    }
 
 		    //save the map
-		    StupidRobot.Editor.PersistenceManager.saveMapFromList(mapname, gridItems);
+		    StupidRobot.Editor.PersistenceManager.getInstance.saveMapFromList(mapname, gridItems);
 		  }
 		},
 
@@ -80,7 +80,6 @@
 		  //this._createMap();
 
 		  //fill the new map with content from external file
-		  var data = StupidRobot.Editor.PersistenceManager.loadMapData(file);
 		  console.log(data);
 
 		}

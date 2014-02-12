@@ -29,6 +29,19 @@
                     }"></button>
 		</div>
 	</div>
+  <!-- load Flyout -->
+  <div id="loadFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Maps}">
+    <div id="templateDiv" data-win-control="WinJS.Binding.Template">
+      <div style="width: 100%; padding: 5px; overflow: hidden;" class="templateitem" data-win-bind="style.background: color">
+         <span style="width: 100%;" data-win-bind="textContent: name"></span>
+      </div>
+    </div>
+    <div id="basicListView" data-win-control="WinJS.UI.ListView" data-win-options="{
+				 itemDataSource : StupidRobot.Editor.LoadedEntities.dataSource,
+				 itemTemplate: select('#templateDiv'),
+				 layout : {type: WinJS.UI.GridLayout}}">
+    </div>
+  </div>
 
 	<div id="EditorManageBar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement: 'top', sticky: true}">
 		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
@@ -47,12 +60,14 @@
                     section:'selection',
                     tooltip:'save the map'
                     }"></button>
-		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
+    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
                     id:'load',
                     label:'load',
                     icon:'import',
                     section:'selection',
-                    tooltip:'load the map'
+                    tooltip:'load the map',
+            				type:'flyout',
+										flyout:'loadFlyout'
                     }"></button>
 		<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{
                     id:'share',

@@ -29,8 +29,8 @@
 		WinJS.Utilities.query('#load')
       .listen('click', function () {
         //get all maps from the local space
-        var mapList = StupidRobot.Editor.PersistenceManager.getFilesFromLocalSpace();
-        console.log(mapList);
+        //var mapList = StupidRobot.Editor.PersistenceManager.getFilesFromLocalSpace();
+        //console.log(mapList);
         /*
         for (var i = 0 ; i < mapList.size; i++) {
           console.log(mapList.getAt(i).name);

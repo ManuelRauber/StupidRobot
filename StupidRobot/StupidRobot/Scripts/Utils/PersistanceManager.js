@@ -57,17 +57,35 @@
           return xmlDoc;
         });
       });
+    },
+
+    getDataSourceFromLocalSpaceItems: {
+      get: function () {
+        var fileList = this.getFilesFromLocalSpace();
+        var array = [];
+        for (var i = 0 ; i < fileList.size ; i++) {
+          console.log(fileList.getAt(i));
+        }
+        var itemList = new WinJS.Binding.List(array);
+        return itemList.dataSource;
+      }
     }
   });
 
 	var persistanceManagerClass = new PersistanceManagerClass();
 
-	WinJS.Namespace.define("StupidRobot.Editor", {
-	  PersistenceManager: {
+	WinJS.Namespace.define("StupidRobot.Editor.PersistenceManager", {
+	  getInstance: {
 	    get: function () {
 	      return persistanceManagerClass;
 	    }
-	  }
+	  },
+
+	  getDataSourceFromLocalSpaceItems: {
+	    get: function () {
+	      return persistanceManagerClass.getDataSourceFromLocalSpaceItems;
+	    }
+	  },
 	});
 
 })();
